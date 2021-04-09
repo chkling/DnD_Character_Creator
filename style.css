@@ -1,6 +1,6 @@
 :root {
-	--main: #f4f4f4;
-	--secondary-color: lightblue;
+	--main: #8b0000;
+	--secondary-color: #00bfff;
 }
 
 * {
@@ -31,6 +31,7 @@
 	color: black;
 }
 
+#navbar a:active,
 .highlighted {
 	display: inline-block;
 	margin: 10px;
@@ -57,11 +58,18 @@
 	background-color: lightblue;
 	margin: 20px;
 	padding: 10px;
+	text-align: center;
 }
 .class-option-B {
 	background-color: lightgreen;
 	margin: 20px;
 	padding: 10px;
+	text-align: center;
+}
+
+.class-container {
+	display: flex;
+	flex-direction: row;
 }
 
 .choose-class-button {
@@ -70,4 +78,9 @@
 	padding: 5px;
 	border-radius: 5px;
 	text-decoration: none;
+}
+
+img {
+	height: 200px;
+	width: 200px;
 }
