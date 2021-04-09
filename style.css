@@ -25,9 +25,10 @@
 	background-color: var(--secondary-color);
 	text-decoration: none;
 	height: 100%;
+	color: black;
 }
 
-h1 {
+#main-container {
 	/* position: absolute; */
 	margin: 20px;
 	padding: 10px;
