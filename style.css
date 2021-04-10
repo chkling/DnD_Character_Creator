@@ -7,6 +7,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: fantasy;
 }
 
 #navbar {
@@ -44,8 +45,16 @@
 
 .main-header {
 	text-align: center;
-	margin: 20px;
+	margin: 70px 10px 10px 10px;
 	padding: 10px;
+}
+
+.main-header h1 {
+	font-size: 3rem;
+}
+.main-header p {
+	margin-top: 20px;
+	font-size: 1.5rem;
 }
 
 .class-option-A {
@@ -53,28 +62,45 @@
 	margin: 20px;
 	padding: 10px;
 	text-align: center;
+	font-size: 20px;
 }
 .class-option-B {
 	background-color: lightgreen;
 	margin: 20px;
 	padding: 10px;
 	text-align: center;
+	font-size: 20px;
+}
+
+.class-option-A h1,
+.class-option-B h1 {
+	font-size: 35px;
 }
 
 .class-container {
 	display: flex;
 	flex-direction: row;
+	margin: 10px;
+	padding: 10px;
 }
 
 .choose-class-button {
 	background-color: lightgrey;
-	margin: 5px;
+	font-size: 20px;
+	margin: 10px;
 	padding: 5px;
 	border-radius: 5px;
 	text-decoration: none;
+	border: 2px black solid;
+}
+
+.choose-class-button:hover {
+	background-color: blueviolet;
+	color: white;
 }
 
 img {
 	height: 250px;
 	width: 250px;
+	padding: 10px;
 }
