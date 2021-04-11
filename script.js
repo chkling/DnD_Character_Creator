@@ -35,8 +35,9 @@ const fetchFightData = async () => {
 
 	// create barbarian text
 	barbName.innerHTML = json.results[0]["name"];
-	barbInfo.innerHTML = "This is text";
-	barbButton.innerHTML = "Click";
+	barbInfo.innerHTML =
+		"A fierce warrior of primitive background who can enter a battle rage.";
+	barbButton.innerHTML = "Learn More";
 
 	// append
 
@@ -48,6 +49,60 @@ const fetchFightData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/barbarian");
 		let json = await response.json();
 		console.log(json);
+		console.log(
+			json.starting_equipment_options[0]["from"][0]["equipment"]["name"]
+		);
+
+		const barbContainer = document.createElement("div");
+		strengthContainer.append(barbContainer);
+
+		const barbProficiencies = document.createElement("ul");
+		barbProficiencies.innerHTML = "List of proficiencies: ";
+		const barbProficienciesChoice = document.createElement("ul");
+		barbProficienciesChoice.innerHTML = "Select Two Skills: ";
+		const starterPack = document.createElement("ul");
+		starterPack.innerHTML = "Starts with: ";
+
+		barbContainer.className = "class-option-A";
+		const barbHealth = document.createElement("h3");
+		barbHealth.innerHTML = `Health points: ${json.hit_die}`;
+		barbContainer.append(barbHealth);
+
+		let counter = 0;
+		for (let prof of json.proficiencies) {
+			const barbProficiency = document.createElement("li");
+			barbProficiency.innerHTML = prof.name;
+			barbContainer.append(barbProficiencies);
+			barbProficiencies.append(barbProficiency);
+			counter += 1;
+		}
+
+		let number = 0;
+		for (let choice of json.proficiency_choices[0]["from"]) {
+			const barbProficiencyChoice = document.createElement("li");
+			barbProficiencyChoice.innerHTML = choice.name;
+			barbContainer.append(barbProficienciesChoice);
+			barbProficienciesChoice.append(barbProficiencyChoice);
+			number += 1;
+		}
+
+		let pack1 = 0;
+		for (let equip1 of json.starting_equipment) {
+			const equipPack1 = document.createElement("li");
+			equipPack1.innerHTML = equip1["equipment"]["name"];
+			barbContainer.append(starterPack);
+			starterPack.append(equipPack1);
+			pack1 += 1;
+		}
+
+		let pack2 = 0;
+		for (let equip2 of json.starting_equipment_options) {
+			const equipPack2 = document.createElement("li");
+			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
+			barbContainer.append(starterPack);
+			starterPack.append(equipPack2);
+			pack2 += 1;
+		}
 	};
 
 	const submitBarb = document.querySelector("#barb-button");
@@ -71,11 +126,12 @@ const fetchFightData = async () => {
 	fighterButton.className = "button";
 	fighterButton.id = "fighter-button";
 
-	// create barbarian text
+	// create fighter text
 
 	fighterName.innerHTML = json.results[4]["name"];
-	fighterInfo.innerHTML = "This is text";
-	fighterButton.innerHTML = "Click";
+	fighterInfo.innerHTML =
+		"A fierce warrior of primitive background who can enter a battle rage.";
+	fighterButton.innerHTML = "Learn More";
 
 	//append
 
@@ -100,8 +156,9 @@ const fetchFightData = async () => {
 	// create barbarian text
 
 	monkName.innerHTML = json.results[5]["name"];
-	monkInfo.innerHTML = "This is text";
-	monkButton.innerHTML = "Click";
+	monkInfo.innerHTML =
+		"A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.";
+	monkButton.innerHTML = "Learn More";
 
 	//append
 
@@ -126,8 +183,8 @@ const fetchFightData = async () => {
 	// create barbarian text
 
 	paladinName.innerHTML = json.results[6]["name"];
-	paladinInfo.innerHTML = "This is text";
-	paladinButton.innerHTML = "Click";
+	paladinInfo.innerHTML = "A holy warrior bound to a sacred oath.";
+	paladinButton.innerHTML = "Learn More";
 
 	//append
 
