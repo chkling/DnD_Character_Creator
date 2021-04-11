@@ -27,10 +27,10 @@ const fetchFightData = async () => {
 
 	// assign classes
 
-	barbarian.className = "class-box";
+	barbarian.className = "class-option-A";
 	barbName.className = "class-header";
 	barbInfo.className = "class-info";
-	barbButton.className = "class-button";
+	barbButton.className = "button";
 	barbButton.id = "barb-button";
 
 	// create barbarian text
@@ -65,10 +65,10 @@ const fetchFightData = async () => {
 
 	// assign classes
 
-	fighter.className = "class-box";
+	fighter.className = "class-option-B";
 	fighterName.className = "class-header";
 	fighterInfo.className = "class-info";
-	fighterButton.className = "class-button";
+	fighterButton.className = "button";
 	fighterButton.id = "fighter-button";
 
 	// create barbarian text
@@ -91,10 +91,10 @@ const fetchFightData = async () => {
 
 	// assign classes
 
-	monk.className = "class-box";
+	monk.className = "class-option-A";
 	monkName.className = "class-header";
 	monkInfo.className = "class-info";
-	monkButton.className = "class-button";
+	monkButton.className = "button";
 	monkButton.id = "monk-button";
 
 	// create barbarian text
@@ -117,10 +117,10 @@ const fetchFightData = async () => {
 
 	// assign classes
 
-	paladin.className = "class-box";
+	paladin.className = "class-option-B";
 	paladinName.className = "class-header";
 	paladinInfo.className = "class-info";
-	paladinButton.className = "class-button";
+	paladinButton.className = "button";
 	paladinButton.id = "paladin-button";
 
 	// create barbarian text
