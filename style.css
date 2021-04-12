@@ -82,7 +82,7 @@
 
 .class-option-A,
 #barbarian,
-#paladin {
+#monk {
 	background-color: var(--secondary);
 	margin: 20px;
 	padding: 10px;
@@ -92,7 +92,7 @@
 	border: 2px solid var(--main);
 }
 .class-option-B,
-#monk,
+#paladin,
 #fighter {
 	background-color: var(--main);
 	color: white;
