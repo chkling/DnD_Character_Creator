@@ -209,7 +209,7 @@ const fetchFightData = async () => {
 		const equipPack4 = document.createElement("li");
 		const equipPack5 = document.createElement("li");
 		const equipPack6 = document.createElement("li");
-		console.log(json.starting_equipment_options["from"]);
+
 		equipPack2.innerHTML =
 			json.starting_equipment_options[0]["from"][0]["equipment"]["name"];
 		equipPack3.innerHTML =
@@ -377,7 +377,7 @@ const fetchFightData = async () => {
 	paladin.append(paladinName, paladinInfo, paladinButton);
 	strengthContainer.append(paladin);
 
-	// INSIDE PALADIN
+	// PALADIN STATS
 	const fetchPaladinData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/paladin");
 		let json = await response.json();
@@ -427,17 +427,29 @@ const fetchFightData = async () => {
 			starterPack.append(equipPack1);
 		}
 
-		for (let equip2 of json.starting_equipment_options) {
-			const equipPack2 = document.createElement("li");
-			equipPack2.innerHTML = equip2["from"][0]["equipment"];
-			container.append(starterPack);
-			starterPack.append(equipPack2);
-		}
+		const equipPack2 = document.createElement("li");
+		const equipPack3 = document.createElement("li");
+		const equipPack4 = document.createElement("li");
+		const equipPack5 = document.createElement("li");
+
+		equipPack2.innerHTML =
+			json.starting_equipment_options[0]["from"][0]["0"]["equipment"]["name"];
+		equipPack3.innerHTML =
+			json.starting_equipment_options[0]["from"][0]["1"]["equipment_option"][
+				"from"
+			]["equipment_category"]["name"];
+		equipPack4.innerHTML =
+			json.starting_equipment_options[1]["from"][0]["equipment"]["name"];
+		equipPack5.innerHTML =
+			json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
+
+		container.append(starterPack);
+		starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
+
 		container.append(classIMG);
 		paladin.removeChild(paladinButton);
 		paladin.append(container, goBack);
 
-		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
 			main.removeChild(strengthContainer);
 			fetchFightData();
@@ -451,8 +463,4 @@ const fetchFightData = async () => {
 	});
 };
 
-const submit = document.querySelector("button");
-submit.addEventListener("click", function () {
-	main.removeChild(mainHeader);
-	fetchFightData();
-});
+fetchFightData();
