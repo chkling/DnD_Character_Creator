@@ -1,22 +1,25 @@
 const main = document.querySelector(".main-class");
+const mainHeader = document.querySelector("#main-class-header");
 
 const fetchFightData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
 	console.log(json.results);
 
-	function saveItem(className) {
-		if (className == "barbarian") {
-			strengthContainer.removeChild(fighter);
-			strengthContainer.removeChild(monk);
-			strengthContainer.removeChild(paladin);
-		}
-		return;
-	}
-
 	const strengthContainer = document.createElement("div");
 	strengthContainer.className = "main-class-container";
 	main.append(strengthContainer);
+
+	function saveClass(classDiv) {
+		let object = document.querySelectorAll(".class-filter");
+		console.log(object);
+		for (let i = 0; i < object.length; i++) {
+			let removeID = document.getElementById(object[i]["id"]);
+			if (removeID !== classDiv) {
+				strengthContainer.removeChild(removeID);
+			}
+		}
+	}
 
 	// BARBARIAN
 
@@ -28,6 +31,8 @@ const fetchFightData = async () => {
 	// assign classes
 
 	barbarian.className = "class-option-A";
+	barbarian.className = "class-filter";
+	barbarian.id = "barbarian";
 	barbName.className = "class-header";
 	barbInfo.className = "class-info";
 	barbButton.className = "button";
@@ -44,70 +49,79 @@ const fetchFightData = async () => {
 	barbarian.append(barbName, barbInfo, barbButton);
 	strengthContainer.append(barbarian);
 
+	function checkBarb() {
+		return barbarian;
+	}
+
 	// INSIDE BARBARIAN CLASS
 	const fetchBarbData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/barbarian");
 		let json = await response.json();
 		console.log(json);
-		console.log(
-			json.starting_equipment_options[0]["from"][0]["equipment"]["name"]
-		);
 
 		const barbContainer = document.createElement("div");
+		barbContainer.className = "class-box";
 		strengthContainer.append(barbContainer);
 
 		const barbProficiencies = document.createElement("ul");
-		barbProficiencies.innerHTML = "List of proficiencies: ";
 		const barbProficienciesChoice = document.createElement("ul");
-		barbProficienciesChoice.innerHTML = "Select Two: ";
 		const starterPack = document.createElement("ul");
-		starterPack.innerHTML = "Starts with: ";
-
-		barbContainer.className = "class-option-A";
 		const barbHealth = document.createElement("h3");
-		barbHealth.innerHTML = `Health points: ${json.hit_die}`;
-		barbContainer.append(barbHealth);
+		const barbIMG = document.createElement("img");
+		const goBack = document.createElement("button");
 
-		let counter = 0;
+		barbProficiencies.innerHTML = "List of proficiencies: ";
+		barbProficienciesChoice.innerHTML = "Select Two: ";
+		starterPack.innerHTML = "Starts with: ";
+		barbHealth.innerHTML = `Health points: ${json.hit_die}`;
+		barbIMG.src = "images/barbarian.png";
+		goBack.innerHTML = "Go Back";
+		goBack.className = "button";
+
+		barbContainer.append(barbIMG, barbHealth);
+
+		// class info generation
+
 		for (let prof of json.proficiencies) {
 			const barbProficiency = document.createElement("li");
 			barbProficiency.innerHTML = prof.name;
 			barbContainer.append(barbProficiencies);
 			barbProficiencies.append(barbProficiency);
-			counter += 1;
 		}
 
-		let number = 0;
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const barbProficiencyChoice = document.createElement("li");
 			barbProficiencyChoice.innerHTML = choice.name;
 			barbContainer.append(barbProficienciesChoice);
 			barbProficienciesChoice.append(barbProficiencyChoice);
-			number += 1;
 		}
 
-		let pack1 = 0;
 		for (let equip1 of json.starting_equipment) {
 			const equipPack1 = document.createElement("li");
 			equipPack1.innerHTML = equip1["equipment"]["name"];
 			barbContainer.append(starterPack);
 			starterPack.append(equipPack1);
-			pack1 += 1;
 		}
 
-		let pack2 = 0;
 		for (let equip2 of json.starting_equipment_options) {
 			const equipPack2 = document.createElement("li");
 			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
 			barbContainer.append(starterPack);
 			starterPack.append(equipPack2);
-			pack2 += 1;
 		}
+		barbarian.removeChild(barbButton);
+		barbarian.append(barbContainer, goBack);
+
+		// const goBack = document.querySelector("button");
+		goBack.addEventListener("click", function () {
+			main.removeChild(strengthContainer);
+			fetchFightData();
+		});
 	};
 
 	const submitBarb = document.querySelector("#barb-button");
 	submitBarb.addEventListener("click", function () {
-		saveItem("barbarian");
+		saveClass(checkBarb());
 		fetchBarbData();
 	});
 
@@ -121,6 +135,8 @@ const fetchFightData = async () => {
 	// assign classes
 
 	fighter.className = "class-option-B";
+	fighter.className = "class-filter";
+	fighter.id = "fighter";
 	fighterName.className = "class-header";
 	fighterInfo.className = "class-info";
 	fighterButton.className = "button";
@@ -148,6 +164,8 @@ const fetchFightData = async () => {
 	// assign classes
 
 	monk.className = "class-option-A";
+	monk.className = "class-filter";
+	monk.id = "monk";
 	monkName.className = "class-header";
 	monkInfo.className = "class-info";
 	monkButton.className = "button";
@@ -175,6 +193,8 @@ const fetchFightData = async () => {
 	// assign classes
 
 	paladin.className = "class-option-B";
+	paladin.className = "class-filter";
+	paladin.id = "paladin";
 	paladinName.className = "class-header";
 	paladinInfo.className = "class-info";
 	paladinButton.className = "button";
@@ -194,5 +214,6 @@ const fetchFightData = async () => {
 
 const submit = document.querySelector("button");
 submit.addEventListener("click", function () {
+	main.removeChild(mainHeader);
 	fetchFightData();
 });

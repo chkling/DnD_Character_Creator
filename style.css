@@ -80,7 +80,9 @@
 	margin: 5px;
 }
 
-.class-option-A {
+.class-option-A,
+#barbarian,
+#paladin {
 	background-color: var(--secondary);
 	margin: 20px;
 	padding: 10px;
@@ -89,7 +91,9 @@
 	border-radius: 20px;
 	border: 2px solid var(--main);
 }
-.class-option-B {
+.class-option-B,
+#monk,
+#fighter {
 	background-color: var(--main);
 	color: white;
 	margin: 20px;
@@ -103,6 +107,17 @@
 .class-option-A h1,
 .class-option-B h1 {
 	font-size: 35px;
+}
+
+.class-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.class-box ul li {
+	list-style: none;
 }
 
 .class-container {
@@ -164,9 +179,8 @@ img {
 }
 
 .main-class-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	display: flex;
+	flex-direction: column;
 	width: 100vw;
 	/* align-items: center; */
 }
