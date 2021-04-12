@@ -59,7 +59,7 @@ const fetchFightData = async () => {
 		const barbProficiencies = document.createElement("ul");
 		barbProficiencies.innerHTML = "List of proficiencies: ";
 		const barbProficienciesChoice = document.createElement("ul");
-		barbProficienciesChoice.innerHTML = "Select Two Skills: ";
+		barbProficienciesChoice.innerHTML = "Select Two: ";
 		const starterPack = document.createElement("ul");
 		starterPack.innerHTML = "Starts with: ";
 
