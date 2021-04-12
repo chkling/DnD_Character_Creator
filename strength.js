@@ -118,7 +118,7 @@ const fetchFightData = async () => {
 
 	const submitBarb = document.querySelector("#barb-button");
 	submitBarb.addEventListener("click", function () {
-		saveClass(checkBarb());
+		saveClass(barbarian);
 		fetchBarbData();
 	});
 
@@ -242,7 +242,7 @@ const fetchFightData = async () => {
 
 	const submitFighter = document.querySelector("#fighter-button");
 	submitFighter.addEventListener("click", function () {
-		saveClass(checkFighter());
+		saveClass(fighter);
 		fetchFighterData();
 	});
 
@@ -366,7 +366,7 @@ const fetchFightData = async () => {
 	paladinButton.className = "button";
 	paladinButton.id = "paladin-button";
 
-	// create barbarian text
+	// create paladin text
 
 	paladinName.innerHTML = json.results[6]["name"];
 	paladinInfo.innerHTML = "A holy warrior bound to a sacred oath.";
@@ -376,6 +376,79 @@ const fetchFightData = async () => {
 
 	paladin.append(paladinName, paladinInfo, paladinButton);
 	strengthContainer.append(paladin);
+
+	// INSIDE PALADIN
+	const fetchPaladinData = async () => {
+		let response = await fetch("https://www.dnd5eapi.co/api/classes/paladin");
+		let json = await response.json();
+		console.log(json);
+
+		const container = document.createElement("div");
+		container.className = "class-box";
+		strengthContainer.append(container);
+
+		const proficiencies = document.createElement("ul");
+		const proficienciesChoice = document.createElement("ul");
+		const starterPack = document.createElement("ul");
+		const health = document.createElement("h3");
+		const classIMG = document.createElement("img");
+		const goBack = document.createElement("button");
+
+		proficiencies.innerHTML = "List of proficiencies: ";
+		proficienciesChoice.innerHTML = "Select Two: ";
+		starterPack.innerHTML = "Starts with: ";
+		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
+		classIMG.src = "images/paladin.png";
+		goBack.innerHTML = "Go Back";
+		goBack.className = "button";
+
+		container.append(health);
+
+		// class info generation
+
+		for (let prof of json.proficiencies) {
+			const proficiency = document.createElement("li");
+			proficiency.innerHTML = prof.name;
+			container.append(proficiencies);
+			proficiencies.append(proficiency);
+		}
+
+		for (let choice of json.proficiency_choices[0]["from"]) {
+			const proficiencyChoice = document.createElement("li");
+			proficiencyChoice.innerHTML = choice.name;
+			container.append(proficienciesChoice);
+			proficienciesChoice.append(proficiencyChoice);
+		}
+
+		for (let equip1 of json.starting_equipment) {
+			const equipPack1 = document.createElement("li");
+			equipPack1.innerHTML = equip1["equipment"]["name"];
+			container.append(starterPack);
+			starterPack.append(equipPack1);
+		}
+
+		for (let equip2 of json.starting_equipment_options) {
+			const equipPack2 = document.createElement("li");
+			equipPack2.innerHTML = equip2["from"][0]["equipment"];
+			container.append(starterPack);
+			starterPack.append(equipPack2);
+		}
+		container.append(classIMG);
+		paladin.removeChild(paladinButton);
+		paladin.append(container, goBack);
+
+		// const goBack = document.querySelector("button");
+		goBack.addEventListener("click", function () {
+			main.removeChild(strengthContainer);
+			fetchFightData();
+		});
+	};
+
+	const submitPaladin = document.querySelector("#paladin-button");
+	submitPaladin.addEventListener("click", function () {
+		saveClass(paladin);
+		fetchPaladinData();
+	});
 };
 
 const submit = document.querySelector("button");
