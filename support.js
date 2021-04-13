@@ -4,7 +4,6 @@ const mainHeader = document.querySelector("#main-class-header");
 const fetchSupportData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
-	console.log(json.results);
 
 	const supportContainer = document.createElement("div");
 	supportContainer.className = "main-class-container";
@@ -12,7 +11,6 @@ const fetchSupportData = async () => {
 
 	function saveClass(classDiv) {
 		let object = document.querySelectorAll(".class-filter");
-		console.log(object);
 		for (let i = 0; i < object.length; i++) {
 			let removeID = document.getElementById(object[i]["id"]);
 			if (removeID !== classDiv) {
@@ -54,7 +52,6 @@ const fetchSupportData = async () => {
 	const fetchBardData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/bard");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
@@ -88,7 +85,7 @@ const fetchSupportData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencyChoice = document.createElement("li");
-			proficiencyChoice.innerHTML = choice.name;
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
 		}
@@ -190,7 +187,7 @@ const fetchSupportData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencychoice = document.createElement("li");
-			proficiencychoice.innerHTML = choice.name;
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficiencychoices);
 			proficiencychoices.append(proficiencychoice);
 		}
@@ -279,7 +276,6 @@ const fetchSupportData = async () => {
 	const fetchRangerData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/ranger");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
@@ -313,7 +309,7 @@ const fetchSupportData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencychoice = document.createElement("li");
-			proficiencychoice.innerHTML = choice.name;
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficiencieschoice);
 			proficiencieschoice.append(proficiencychoice);
 		}
@@ -382,7 +378,6 @@ const fetchSupportData = async () => {
 	const fetchRogueData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/rogue");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
@@ -416,7 +411,7 @@ const fetchSupportData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencyChoice = document.createElement("li");
-			proficiencyChoice.innerHTML = choice.name;
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
 		}

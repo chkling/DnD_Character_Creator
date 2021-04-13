@@ -4,7 +4,6 @@ const mainHeader = document.querySelector("#main-class-header");
 const fetchMagicData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
-	console.log(json.results);
 
 	const magicContainer = document.createElement("div");
 	magicContainer.className = "main-class-container";
@@ -12,7 +11,6 @@ const fetchMagicData = async () => {
 
 	function saveClass(classDiv) {
 		let object = document.querySelectorAll(".class-filter");
-		console.log(object);
 		for (let i = 0; i < object.length; i++) {
 			let removeID = document.getElementById(object[i]["id"]);
 			if (removeID !== classDiv) {
@@ -54,7 +52,6 @@ const fetchMagicData = async () => {
 	const fetchClericData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/cleric");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
@@ -88,7 +85,7 @@ const fetchMagicData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencyChoice = document.createElement("li");
-			proficiencyChoice.innerHTML = choice.name;
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
 		}
@@ -122,40 +119,40 @@ const fetchMagicData = async () => {
 		fetchClericData();
 	});
 
-	// sorceror
+	// sorcerer
 
-	const sorceror = document.createElement("div");
-	const sorcerorName = document.createElement("h1");
-	const sorcerorInfo = document.createElement("p");
-	const sorcerorButton = document.createElement("button");
+	const sorcerer = document.createElement("div");
+	const sorcererName = document.createElement("h1");
+	const sorcererInfo = document.createElement("p");
+	const sorcererButton = document.createElement("button");
 
 	// assign classes
 
-	sorceror.className = "class-option-B";
-	sorceror.className = "class-filter";
-	sorceror.id = "sorceror";
-	sorcerorName.className = "class-header";
-	sorcerorInfo.className = "class-info";
-	sorcerorButton.className = "button";
-	sorcerorButton.id = "sorceror-button";
+	sorcerer.className = "class-option-B";
+	sorcerer.className = "class-filter";
+	sorcerer.id = "sorcerer";
+	sorcererName.className = "class-header";
+	sorcererInfo.className = "class-info";
+	sorcererButton.className = "button";
+	sorcererButton.id = "sorcerer-button";
 
-	// create sorceror text
+	// create sorcerer text
 
-	sorcerorName.innerHTML = json.results[9]["name"];
-	sorcerorInfo.innerHTML =
+	sorcererName.innerHTML = json.results[9]["name"];
+	sorcererInfo.innerHTML =
 		"A spellcaster who draws on inherent magic from a gift or bloodline...";
-	sorcerorButton.innerHTML = "Learn More";
+	sorcererButton.innerHTML = "Learn More";
 
 	//append
 
-	sorceror.append(sorcerorName, sorcerorInfo, sorcerorButton);
-	magicContainer.append(sorceror);
+	sorcerer.append(sorcererName, sorcererInfo, sorcererButton);
+	magicContainer.append(sorcerer);
 
-	///////////// sorceror
+	///////////// sorcerer
 
-	// INSIDE sorceror CLASS
-	const fetchSorcerorData = async () => {
-		let response = await fetch("https://www.dnd5eapi.co/api/classes/sorceror");
+	// INSIDE sorcerer CLASS
+	const fetchSorcererData = async () => {
+		let response = await fetch("https://www.dnd5eapi.co/api/classes/sorcerer");
 		let json = await response.json();
 
 		const container = document.createElement("div");
@@ -173,7 +170,7 @@ const fetchMagicData = async () => {
 		proficiencychoices.innerHTML = "Select Two: ";
 		starterPack.innerHTML = "Starts with: ";
 		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
-		classIMG.src = "images/sorceror.png";
+		classIMG.src = "images/sorcerer.png";
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
@@ -190,7 +187,7 @@ const fetchMagicData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencychoice = document.createElement("li");
-			proficiencychoice.innerHTML = choice.name;
+			proficiencychoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficiencychoices);
 			proficiencychoices.append(proficiencychoice);
 		}
@@ -229,8 +226,8 @@ const fetchMagicData = async () => {
 		// 	equipPack6
 		// );
 		container.append(starterPack, classIMG);
-		sorceror.removeChild(sorcerorButton);
-		sorceror.append(container, goBack);
+		sorcerer.removeChild(sorcererButton);
+		sorcerer.append(container, goBack);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
@@ -239,13 +236,13 @@ const fetchMagicData = async () => {
 		});
 	};
 
-	const submitSorceror = document.querySelector("#sorceror-button");
-	submitSorceror.addEventListener("click", function () {
-		saveClass(sorceror);
-		fetchSorcerorData();
+	const submitSorcerer = document.querySelector("#sorcerer-button");
+	submitSorcerer.addEventListener("click", function () {
+		saveClass(sorcerer);
+		fetchSorcererData();
 	});
 
-	///////////// sorceror END
+	///////////// sorcerer END
 
 	////////////// warlock START
 
@@ -279,7 +276,6 @@ const fetchMagicData = async () => {
 	const fetchWarlockData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/warlock");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
@@ -312,10 +308,10 @@ const fetchMagicData = async () => {
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
-			const proficiencychoice = document.createElement("li");
-			proficiencychoice.innerHTML = choice.name;
+			const proficiencyChoice = document.createElement("li");
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficiencieschoice);
-			proficiencieschoice.append(proficiencychoice);
+			proficiencieschoice.append(proficiencyChoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
@@ -382,7 +378,6 @@ const fetchMagicData = async () => {
 	const fetchWizardData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/wizard");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
@@ -416,7 +411,7 @@ const fetchMagicData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencyChoice = document.createElement("li");
-			proficiencyChoice.innerHTML = choice.name;
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
 		}
