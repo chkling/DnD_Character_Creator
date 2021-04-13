@@ -1,13 +1,16 @@
 const main = document.querySelector("#main-body");
-const mainHeader = document.querySelector("#main-class-header");
+const mainHeader = document.querySelector(".main-class-header");
+const mainHeaderIMG = document.querySelector(".main-class-img");
+const mainClassStrength = document.querySelector("#main-class-strength");
 
 const fetchStrengthData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
 
 	const strengthContainer = document.createElement("div");
-	// strengthContainer.className = "main-class-container";
 	strengthContainer.className = "main-class-strength";
+	main.append(mainHeader);
+	mainHeader.append(mainHeaderIMG);
 	main.append(strengthContainer);
 
 	function saveClass(classDiv) {
@@ -55,14 +58,15 @@ const fetchStrengthData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		strengthContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
 		const starterPack = document.createElement("ul");
 		const health = document.createElement("h3");
 		const classIMG = document.createElement("img");
+		classIMG.className = "classIMG";
 		const goBack = document.createElement("button");
 
 		proficiencies.innerHTML = "List of proficiencies: ";
@@ -104,18 +108,21 @@ const fetchStrengthData = async () => {
 			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-		barbarian.removeChild(barbButton);
-		barbarian.append(container, goBack);
+		// main.removeChild(barbButton);
+		container.append(goBack);
+		main.append(container);
 
 		goBack.addEventListener("click", function () {
-			main.removeChild(strengthContainer);
+			main.removeChild(container);
 			fetchStrengthData();
 		});
 	};
 
 	const submitBarb = document.querySelector("#barb-button");
 	submitBarb.addEventListener("click", function () {
-		saveClass(barbarian);
+		// saveClass(barbarian);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(strengthContainer);
 		fetchBarbData();
 	});
 
