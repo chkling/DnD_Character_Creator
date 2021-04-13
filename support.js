@@ -428,24 +428,24 @@ const fetchSupportData = async () => {
 			starterPack.append(equipPack1);
 		}
 
-		const equipPack2 = document.createElement("li");
-		const equipPack3 = document.createElement("li");
-		const equipPack4 = document.createElement("li");
-		const equipPack5 = document.createElement("li");
+		// const equipPack2 = document.createElement("li");
+		// const equipPack3 = document.createElement("li");
+		// const equipPack4 = document.createElement("li");
+		// const equipPack5 = document.createElement("li");
 
-		equipPack2.innerHTML =
-			json.starting_equipment_options[0]["from"][0]["0"]["equipment"]["name"];
-		equipPack3.innerHTML =
-			json.starting_equipment_options[0]["from"][0]["1"]["equipment_option"][
-				"from"
-			]["equipment_category"]["name"];
-		equipPack4.innerHTML =
-			json.starting_equipment_options[1]["from"][0]["equipment"]["name"];
-		equipPack5.innerHTML =
-			json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
+		// equipPack2.innerHTML =
+		// 	json.starting_equipment_options[0]["from"][0]["0"]["equipment"]["name"];
+		// equipPack3.innerHTML =
+		// 	json.starting_equipment_options[0]["from"][0]["1"]["equipment_option"][
+		// 		"from"
+		// 	]["equipment_category"]["name"];
+		// equipPack4.innerHTML =
+		// 	json.starting_equipment_options[1]["from"][0]["equipment"]["name"];
+		// equipPack5.innerHTML =
+		// 	json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
 
-		container.append(starterPack);
-		starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
+		// container.append(starterPack);
+		// starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
 		container.append(classIMG);
 		rogue.removeChild(rogueButton);
@@ -453,7 +453,7 @@ const fetchSupportData = async () => {
 
 		goBack.addEventListener("click", function () {
 			main.removeChild(supportContainer);
-			fetchFightData();
+			fetchSupportData();
 		});
 	};
 
