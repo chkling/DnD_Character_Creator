@@ -86,7 +86,9 @@
 #barbarian,
 #monk,
 #druid,
-#rogue {
+#rogue,
+#cleric,
+#warlock {
 	background-color: var(--secondary);
 	margin: 20px;
 	padding: 10px;
@@ -99,7 +101,9 @@
 #paladin,
 #fighter,
 #bard,
-#ranger {
+#ranger,
+#wizard,
+#sorceror {
 	background-color: var(--main);
 	color: white;
 	margin: 20px;
