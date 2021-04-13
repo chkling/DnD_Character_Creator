@@ -4,7 +4,6 @@ const mainHeader = document.querySelector("#main-class-header");
 const fetchFightData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
-	console.log(json.results);
 
 	const strengthContainer = document.createElement("div");
 	strengthContainer.className = "main-class-container";
@@ -12,7 +11,6 @@ const fetchFightData = async () => {
 
 	function saveClass(classDiv) {
 		let object = document.querySelectorAll(".class-filter");
-		console.log(object);
 		for (let i = 0; i < object.length; i++) {
 			let removeID = document.getElementById(object[i]["id"]);
 			if (removeID !== classDiv) {
@@ -54,7 +52,6 @@ const fetchFightData = async () => {
 	const fetchBarbData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/barbarian");
 		let json = await response.json();
-		console.log(json);
 
 		const barbContainer = document.createElement("div");
 		barbContainer.className = "class-box";
@@ -109,7 +106,6 @@ const fetchFightData = async () => {
 		barbarian.removeChild(barbButton);
 		barbarian.append(barbContainer, goBack);
 
-		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
 			main.removeChild(strengthContainer);
 			fetchFightData();
@@ -157,7 +153,6 @@ const fetchFightData = async () => {
 	const fetchFighterData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/fighter");
 		let json = await response.json();
-		console.log(json);
 
 		const fighterContainer = document.createElement("div");
 		fighterContainer.className = "class-box";
@@ -233,7 +228,6 @@ const fetchFightData = async () => {
 		fighter.removeChild(fighterButton);
 		fighter.append(fighterContainer, goBack);
 
-		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
 			main.removeChild(strengthContainer);
 			fetchFightData();
@@ -280,7 +274,6 @@ const fetchFightData = async () => {
 	const fetchMonkData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/monk");
 		let json = await response.json();
-		console.log(json);
 
 		const monkContainer = document.createElement("div");
 		monkContainer.className = "class-box";
@@ -381,7 +374,6 @@ const fetchFightData = async () => {
 	const fetchPaladinData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/paladin");
 		let json = await response.json();
-		console.log(json);
 
 		const container = document.createElement("div");
 		container.className = "class-box";
