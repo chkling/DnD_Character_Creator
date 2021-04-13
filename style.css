@@ -84,7 +84,9 @@
 
 .class-option-A,
 #barbarian,
-#monk {
+#monk,
+#druid,
+#rogue {
 	background-color: var(--secondary);
 	margin: 20px;
 	padding: 10px;
@@ -95,7 +97,9 @@
 }
 .class-option-B,
 #paladin,
-#fighter {
+#fighter,
+#bard,
+#ranger {
 	background-color: var(--main);
 	color: white;
 	margin: 20px;

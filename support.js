@@ -122,264 +122,265 @@ const fetchSupportData = async () => {
 		fetchBardData();
 	});
 
-	// FIGHTER
+	// DRUID
 
-	const fighter = document.createElement("div");
-	const fighterName = document.createElement("h1");
-	const fighterInfo = document.createElement("p");
-	const fighterButton = document.createElement("button");
+	const druid = document.createElement("div");
+	const druidName = document.createElement("h1");
+	const druidInfo = document.createElement("p");
+	const druidButton = document.createElement("button");
 
 	// assign classes
 
-	fighter.className = "class-option-B";
-	fighter.className = "class-filter";
-	fighter.id = "fighter";
-	fighterName.className = "class-header";
-	fighterInfo.className = "class-info";
-	fighterButton.className = "button";
-	fighterButton.id = "fighter-button";
+	druid.className = "class-option-B";
+	druid.className = "class-filter";
+	druid.id = "druid";
+	druidName.className = "class-header";
+	druidInfo.className = "class-info";
+	druidButton.className = "button";
+	druidButton.id = "druid-button";
 
-	// create fighter text
+	// create druid text
 
-	fighterName.innerHTML = json.results[4]["name"];
-	fighterInfo.innerHTML =
-		" A master of martial combat, skilled with a variety of weapons and armor...";
-	fighterButton.innerHTML = "Learn More";
+	druidName.innerHTML = json.results[3]["name"];
+	druidInfo.innerHTML =
+		"A priest of the Old Faith, wielding the powers of nature -- moonlight and plant growth, fire and lightning -- and adopting animal forms...";
+	druidButton.innerHTML = "Learn More";
 
 	//append
 
-	fighter.append(fighterName, fighterInfo, fighterButton);
-	supportContainer.append(fighter);
+	druid.append(druidName, druidInfo, druidButton);
+	supportContainer.append(druid);
 
 	///////////// FIGHTER
 
-	// INSIDE BARBARIAN CLASS
-	const fetchFighterData = async () => {
-		let response = await fetch("https://www.dnd5eapi.co/api/classes/fighter");
+	// INSIDE Druid CLASS
+	const fetchDruidData = async () => {
+		let response = await fetch("https://www.dnd5eapi.co/api/classes/druid");
 		let json = await response.json();
-		console.log(json);
 
-		const fighterContainer = document.createElement("div");
-		fighterContainer.className = "class-box";
-		supportContainer.append(fighterContainer);
+		const container = document.createElement("div");
+		container.className = "class-box";
+		supportContainer.append(container);
 
-		const fighterProficiencies = document.createElement("ul");
-		const fighterProficienciesChoice = document.createElement("ul");
+		const proficiencies = document.createElement("ul");
+		const proficiencychoices = document.createElement("ul");
 		const starterPack = document.createElement("ul");
-		const fighterHealth = document.createElement("h3");
-		const fighterIMG = document.createElement("img");
+		const health = document.createElement("h3");
+		const classIMG = document.createElement("img");
 		const goBack = document.createElement("button");
 
-		fighterProficiencies.innerHTML = "List of proficiencies: ";
-		fighterProficienciesChoice.innerHTML = "Select Two: ";
+		proficiencies.innerHTML = "List of proficiencies: ";
+		proficiencychoices.innerHTML = "Select Two: ";
 		starterPack.innerHTML = "Starts with: ";
-		fighterHealth.innerHTML = `Starting Health Points: ${json.hit_die}`;
-		fighterIMG.src = "images/fighter.png";
+		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
+		classIMG.src = "images/druid.png";
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		fighterContainer.append(fighterHealth);
+		container.append(health);
 
 		// class info generation
 
 		for (let prof of json.proficiencies) {
-			const fighterProficiency = document.createElement("li");
-			fighterProficiency.innerHTML = prof.name;
-			fighterContainer.append(fighterProficiencies);
-			fighterProficiencies.append(fighterProficiency);
+			const proficiency = document.createElement("li");
+			proficiency.innerHTML = prof.name;
+			container.append(proficiencies);
+			proficiencies.append(proficiency);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
-			const fighterProficiencyChoice = document.createElement("li");
-			fighterProficiencyChoice.innerHTML = choice.name;
-			fighterContainer.append(fighterProficienciesChoice);
-			fighterProficienciesChoice.append(fighterProficiencyChoice);
+			const proficiencychoice = document.createElement("li");
+			proficiencychoice.innerHTML = choice.name;
+			container.append(proficiencychoices);
+			proficiencychoices.append(proficiencychoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
 			const equipPack1 = document.createElement("li");
 			equipPack1.innerHTML = equip1["equipment"]["name"];
-			fighterContainer.append(starterPack);
+			container.append(starterPack);
 			starterPack.append(equipPack1);
 		}
 
 		// let equip2 = json.starting_equipment_options;
-		const equipPack2 = document.createElement("li");
-		const equipPack3 = document.createElement("li");
-		const equipPack4 = document.createElement("li");
-		const equipPack5 = document.createElement("li");
-		const equipPack6 = document.createElement("li");
+		// const equipPack2 = document.createElement("li");
+		// const equipPack3 = document.createElement("li");
+		// const equipPack4 = document.createElement("li");
+		// const equipPack5 = document.createElement("li");
+		// const equipPack6 = document.createElement("li");
 
-		equipPack2.innerHTML =
-			json.starting_equipment_options[0]["from"][0]["equipment"]["name"];
-		equipPack3.innerHTML =
-			json.starting_equipment_options[1]["from"][0]["0"]["equipment"]["name"];
-		equipPack4.innerHTML =
-			json.starting_equipment_options[1]["from"][0]["1"]["equipment_option"][
-				"from"
-			]["equipment_category"]["name"];
-		equipPack5.innerHTML =
-			json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
-		equipPack6.innerHTML =
-			json.starting_equipment_options[3]["from"][0]["equipment"]["name"];
-		starterPack.append(
-			equipPack2,
-			equipPack3,
-			equipPack4,
-			equipPack5,
-			equipPack6
-		);
-		fighterContainer.append(starterPack, fighterIMG);
-		fighter.removeChild(fighterButton);
-		fighter.append(fighterContainer, goBack);
+		// equipPack2.innerHTML =
+		// 	json.starting_equipment_options[0]["from"][0]["equipment"]["name"];
+		// equipPack3.innerHTML =
+		// 	json.starting_equipment_options[1]["from"][0]["0"]["equipment"]["name"];
+		// equipPack4.innerHTML =
+		// 	json.starting_equipment_options[1]["from"][0]["1"]["equipment_option"][
+		// 		"from"
+		// 	]["equipment_category"]["name"];
+		// equipPack5.innerHTML =
+		// 	json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
+		// equipPack6.innerHTML =
+		// 	json.starting_equipment_options[3]["from"][0]["equipment"]["name"];
+		// starterPack.append(
+		// 	equipPack2,
+		// 	equipPack3,
+		// 	equipPack4,
+		// 	equipPack5,
+		// 	equipPack6
+		// );
+		container.append(starterPack, classIMG);
+		druid.removeChild(druidButton);
+		druid.append(container, goBack);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
 			main.removeChild(supportContainer);
-			fetchFightData();
+			fetchSupportData();
 		});
 	};
 
-	const submitFighter = document.querySelector("#fighter-button");
-	submitFighter.addEventListener("click", function () {
-		saveClass(fighter);
-		fetchFighterData();
+	const submitDruid = document.querySelector("#druid-button");
+	submitDruid.addEventListener("click", function () {
+		saveClass(druid);
+		fetchDruidData();
 	});
 
-	///////////// FIGHTER
+	///////////// DRUID END
 
-	////////////// MONK
+	////////////// RANGER START
 
-	const monk = document.createElement("div");
-	const monkName = document.createElement("h1");
-	const monkInfo = document.createElement("p");
-	const monkButton = document.createElement("button");
+	const ranger = document.createElement("div");
+	const rangerName = document.createElement("h1");
+	const rangerInfo = document.createElement("p");
+	const rangerButton = document.createElement("button");
 
 	// assign classes
 
-	monk.className = "class-option-A";
-	monk.className = "class-filter";
-	monk.id = "monk";
-	monkName.className = "class-header";
-	monkInfo.className = "class-info";
-	monkButton.className = "button";
-	monkButton.id = "monk-button";
+	ranger.className = "class-option-A";
+	ranger.className = "class-filter";
+	ranger.id = "ranger";
+	rangerName.className = "class-header";
+	rangerInfo.className = "class-info";
+	rangerButton.className = "button";
+	rangerButton.id = "ranger-button";
 
 	// create barbarian text
 
-	monkName.innerHTML = json.results[5]["name"];
-	monkInfo.innerHTML =
-		"A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.";
-	monkButton.innerHTML = "Learn More";
+	rangerName.innerHTML = json.results[7]["name"];
+	rangerInfo.innerHTML =
+		"A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization...";
+	rangerButton.innerHTML = "Learn More";
 
 	//append
 
-	monk.append(monkName, monkInfo, monkButton);
-	supportContainer.append(monk);
+	ranger.append(rangerName, rangerInfo, rangerButton);
+	supportContainer.append(ranger);
 
-	const fetchMonkData = async () => {
-		let response = await fetch("https://www.dnd5eapi.co/api/classes/monk");
+	const fetchRangerData = async () => {
+		let response = await fetch("https://www.dnd5eapi.co/api/classes/ranger");
 		let json = await response.json();
 		console.log(json);
 
-		const monkContainer = document.createElement("div");
-		monkContainer.className = "class-box";
-		supportContainer.append(monkContainer);
+		const container = document.createElement("div");
+		container.className = "class-box";
+		supportContainer.append(container);
 
-		const monkProficiencies = document.createElement("ul");
-		const monkProficienciesChoice = document.createElement("ul");
+		const proficiencies = document.createElement("ul");
+		const proficiencieschoice = document.createElement("ul");
 		const starterPack = document.createElement("ul");
-		const monkHealth = document.createElement("h3");
-		const monkIMG = document.createElement("img");
+		const health = document.createElement("h3");
+		const classIMG = document.createElement("img");
 		const goBack = document.createElement("button");
 
-		monkProficiencies.innerHTML = "List of proficiencies: ";
-		monkProficienciesChoice.innerHTML = "Select Two: ";
+		proficiencies.innerHTML = "List of proficiencies: ";
+		proficiencieschoice.innerHTML = "Select Two: ";
 		starterPack.innerHTML = "Starts with: ";
-		monkHealth.innerHTML = `Starting Health Points: ${json.hit_die}`;
-		monkIMG.src = "images/monk.png";
+		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
+		classIMG.src = "images/ranger.png";
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		monkContainer.append(monkIMG, monkHealth);
+		container.append(classIMG, health);
 
 		// class info generation
 
 		for (let prof of json.proficiencies) {
-			const monkProficiency = document.createElement("li");
-			monkProficiency.innerHTML = prof.name;
-			monkContainer.append(monkProficiencies);
-			monkProficiencies.append(monkProficiency);
+			const proficiency = document.createElement("li");
+			proficiency.innerHTML = prof.name;
+			container.append(proficiencies);
+			proficiencies.append(proficiency);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
-			const monkProficiencyChoice = document.createElement("li");
-			monkProficiencyChoice.innerHTML = choice.name;
-			monkContainer.append(monkProficienciesChoice);
-			monkProficienciesChoice.append(monkProficiencyChoice);
+			const proficiencychoice = document.createElement("li");
+			proficiencychoice.innerHTML = choice.name;
+			container.append(proficiencieschoice);
+			proficiencieschoice.append(proficiencychoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
 			const equipPack1 = document.createElement("li");
 			equipPack1.innerHTML = equip1["equipment"]["name"];
-			monkContainer.append(starterPack);
+			container.append(starterPack);
 			starterPack.append(equipPack1);
 		}
 
 		for (let equip2 of json.starting_equipment_options) {
 			const equipPack2 = document.createElement("li");
 			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
-			monkContainer.append(starterPack);
+			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-		monk.removeChild(monkButton);
-		monk.append(monkContainer, goBack);
+		ranger.removeChild(rangerButton);
+		ranger.append(container, goBack);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
 			main.removeChild(supportContainer);
-			fetchFightData();
+			fetchSupportData();
 		});
 	};
 
-	const submitMonk = document.querySelector("#monk-button");
-	submitMonk.addEventListener("click", function () {
-		saveClass(monk);
-		fetchMonkData();
+	const submitRanger = document.querySelector("#ranger-button");
+	submitRanger.addEventListener("click", function () {
+		saveClass(ranger);
+		fetchRangerData();
 	});
 
-	//////// MONK
-	// PALADIN
+	//////// RANGER END
 
-	const paladin = document.createElement("div");
-	const paladinName = document.createElement("h1");
-	const paladinInfo = document.createElement("p");
-	const paladinButton = document.createElement("button");
+	/////// ROGUE START
+
+	const rogue = document.createElement("div");
+	const rogueName = document.createElement("h1");
+	const rogueInfo = document.createElement("p");
+	const rogueButton = document.createElement("button");
 
 	// assign classes
 
-	paladin.className = "class-option-B";
-	paladin.className = "class-filter";
-	paladin.id = "paladin";
-	paladinName.className = "class-header";
-	paladinInfo.className = "class-info";
-	paladinButton.className = "button";
-	paladinButton.id = "paladin-button";
+	rogue.className = "class-option-B";
+	rogue.className = "class-filter";
+	rogue.id = "rogue";
+	rogueName.className = "class-header";
+	rogueInfo.className = "class-info";
+	rogueButton.className = "button";
+	rogueButton.id = "rogue-button";
 
-	// create paladin text
+	// create rogue text
 
-	paladinName.innerHTML = json.results[6]["name"];
-	paladinInfo.innerHTML = "A holy warrior bound to a sacred oath.";
-	paladinButton.innerHTML = "Learn More";
+	rogueName.innerHTML = json.results[8]["name"];
+	rogueInfo.innerHTML =
+		"A scoundrel who uses stealth and trickery to overcome obstacles and enemies...";
+	rogueButton.innerHTML = "Learn More";
 
 	//append
 
-	paladin.append(paladinName, paladinInfo, paladinButton);
-	supportContainer.append(paladin);
+	rogue.append(rogueName, rogueInfo, rogueButton);
+	supportContainer.append(rogue);
 
-	// PALADIN STATS
-	const fetchPaladinData = async () => {
-		let response = await fetch("https://www.dnd5eapi.co/api/classes/paladin");
+	// ROGUE STATS
+	const fetchRogueData = async () => {
+		let response = await fetch("https://www.dnd5eapi.co/api/classes/rogue");
 		let json = await response.json();
 		console.log(json);
 
@@ -398,7 +399,7 @@ const fetchSupportData = async () => {
 		proficienciesChoice.innerHTML = "Select Two: ";
 		starterPack.innerHTML = "Starts with: ";
 		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
-		classIMG.src = "images/paladin.png";
+		classIMG.src = "images/rogue.png";
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
@@ -447,8 +448,8 @@ const fetchSupportData = async () => {
 		starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
 		container.append(classIMG);
-		paladin.removeChild(paladinButton);
-		paladin.append(container, goBack);
+		rogue.removeChild(rogueButton);
+		rogue.append(container, goBack);
 
 		goBack.addEventListener("click", function () {
 			main.removeChild(supportContainer);
@@ -456,10 +457,10 @@ const fetchSupportData = async () => {
 		});
 	};
 
-	const submitPaladin = document.querySelector("#paladin-button");
-	submitPaladin.addEventListener("click", function () {
-		saveClass(paladin);
-		fetchPaladinData();
+	const submitRogue = document.querySelector("#rogue-button");
+	submitRogue.addEventListener("click", function () {
+		saveClass(rogue);
+		fetchRogueData();
 	});
 };
 
