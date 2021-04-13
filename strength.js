@@ -1,4 +1,4 @@
-const main = document.querySelector(".main-class");
+const main = document.querySelector("#main-body");
 const mainHeader = document.querySelector("#main-class-header");
 
 const fetchStrengthData = async () => {
@@ -6,7 +6,8 @@ const fetchStrengthData = async () => {
 	let json = await response.json();
 
 	const strengthContainer = document.createElement("div");
-	strengthContainer.className = "main-class-container";
+	// strengthContainer.className = "main-class-container";
+	strengthContainer.className = "main-class-strength";
 	main.append(strengthContainer);
 
 	function saveClass(classDiv) {
