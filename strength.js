@@ -264,7 +264,7 @@ const fetchStrengthData = async () => {
 
 	monkName.innerHTML = json.results[5]["name"];
 	monkInfo.innerHTML =
-		"A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.";
+		"A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection...";
 	monkButton.innerHTML = "Learn More";
 
 	//append
@@ -363,7 +363,7 @@ const fetchStrengthData = async () => {
 	// create paladin text
 
 	paladinName.innerHTML = json.results[6]["name"];
-	paladinInfo.innerHTML = "A holy warrior bound to a sacred oath.";
+	paladinInfo.innerHTML = "A holy warrior bound to a sacred oath...";
 	paladinButton.innerHTML = "Learn More";
 
 	//append
