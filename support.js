@@ -128,7 +128,6 @@ const fetchSupportData = async () => {
 
 	// assign classes
 
-	druid.className = "class-option-B";
 	druid.className = "class-filter";
 	druid.id = "druid";
 	druidName.className = "class-header";
