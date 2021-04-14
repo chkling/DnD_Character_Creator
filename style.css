@@ -120,31 +120,18 @@
 	border-bottom: 2px solid lightblue;
 }
 
-/* .class-option-A {
-	background-color: var(--secondary);
-	color: var(--text);
-	margin: 20px;
-	padding: 10px;
+.marketing .col-lg-4 {
+	margin-bottom: 1.5rem;
 	text-align: center;
-	font-size: 20px;
-	border-radius: 20px;
-	border: 2px solid var(--main);
 }
-.class-option-B {
-	background-color: var(--main);
-	color: var(--text);
-	margin: 20px;
-	padding: 10px;
-	text-align: center;
-	font-size: 20px;
-	border-radius: 20px;
-	border: 2px solid var(--main);
-} */
-/* 
-.class-option-A h1,
-.class-option-B h1 {
-	font-size: 35px;
-} */
+.marketing h2 {
+	font-weight: 400;
+}
+
+.marketing .col-lg-4 p {
+	margin-right: 0.75rem;
+	margin-left: 0.75rem;
+}
 
 .class-container {
 	display: flex;
