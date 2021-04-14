@@ -363,13 +363,6 @@ const fetchStrengthData = async () => {
 			packContainer.append(starterPack);
 		}
 
-		for (let equip2 of json.starting_equipment_options) {
-			const equipPack2 = document.createElement("li");
-			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
-			container.append(starterPack);
-			starterPack.append(equipPack2);
-			packContainer.append(starterPack);
-		}
 		container.append(
 			profContainer,
 			profChoicesContainer,

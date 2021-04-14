@@ -50,6 +50,7 @@ const fetchSupportData = async () => {
 		const container = document.createElement("div");
 		container.id = "class-box";
 		main.append(container);
+		container.append(bardName, bardInfo);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -57,9 +58,17 @@ const fetchSupportData = async () => {
 		const health = document.createElement("h3");
 		const classIMG = document.createElement("img");
 		const goBack = document.createElement("button");
+		const profContainer = document.createElement("div");
+		const profChoicesContainer = document.createElement("div");
+		const packContainer = document.createElement("div");
 
+		health.className = "class-health";
+		classIMG.className = "classIMG";
+		profContainer.className = "proficiencies";
+		profChoicesContainer.className = "proficiencies-choice";
+		packContainer.className = "starter-pack";
 		proficiencies.innerHTML = "List of proficiencies: ";
-		proficienciesChoice.innerHTML = "Select Two: ";
+		proficienciesChoice.innerHTML = "Select Three: ";
 		starterPack.innerHTML = "Starts with: ";
 		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
 		classIMG.src = "images/bard.png";
@@ -75,6 +84,7 @@ const fetchSupportData = async () => {
 			proficiency.innerHTML = prof.name;
 			container.append(proficiencies);
 			proficiencies.append(proficiency);
+			profContainer.append(proficiencies);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
@@ -82,6 +92,7 @@ const fetchSupportData = async () => {
 			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
+			profChoicesContainer.append(proficienciesChoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
@@ -89,6 +100,7 @@ const fetchSupportData = async () => {
 			equipPack1.innerHTML = equip1["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack1);
+			packContainer.append(starterPack);
 		}
 
 		for (let equip2 of json.starting_equipment_options) {
@@ -96,8 +108,15 @@ const fetchSupportData = async () => {
 			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack2);
+			packContainer.append(starterPack);
 		}
-		container.append(goBack);
+		container.append(
+			profContainer,
+			profChoicesContainer,
+			packContainer,
+			goBack
+		);
+
 		main.append(container);
 
 		// const goBack = document.querySelector("button");
@@ -152,15 +171,25 @@ const fetchSupportData = async () => {
 		const container = document.createElement("div");
 		container.id = "class-box";
 		main.append(container);
+		container.append(druidName, druidInfo);
+
 		const proficiencies = document.createElement("ul");
-		const proficiencychoices = document.createElement("ul");
+		const proficienciesChoice = document.createElement("ul");
 		const starterPack = document.createElement("ul");
 		const health = document.createElement("h3");
 		const classIMG = document.createElement("img");
 		const goBack = document.createElement("button");
+		const profContainer = document.createElement("div");
+		const profChoicesContainer = document.createElement("div");
+		const packContainer = document.createElement("div");
 
+		health.className = "class-health";
+		classIMG.className = "classIMG";
+		profContainer.className = "proficiencies";
+		profChoicesContainer.className = "proficiencies-choice";
+		packContainer.className = "starter-pack";
 		proficiencies.innerHTML = "List of proficiencies: ";
-		proficiencychoices.innerHTML = "Select Two: ";
+		proficienciesChoice.innerHTML = "Select Two: ";
 		starterPack.innerHTML = "Starts with: ";
 		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
 		classIMG.src = "images/druid.png";
@@ -176,13 +205,15 @@ const fetchSupportData = async () => {
 			proficiency.innerHTML = prof.name;
 			container.append(proficiencies);
 			proficiencies.append(proficiency);
+			profContainer.append(proficiencies);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
-			const proficiencychoice = document.createElement("li");
-			proficiencychoice.innerHTML = choice.name.replace("Skill: ", "");
-			container.append(proficiencychoices);
-			proficiencychoices.append(proficiencychoice);
+			const proficiencyChoice = document.createElement("li");
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
+			container.append(proficienciesChoice);
+			proficienciesChoice.append(proficiencyChoice);
+			profChoicesContainer.append(proficienciesChoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
@@ -190,6 +221,7 @@ const fetchSupportData = async () => {
 			equipPack1.innerHTML = equip1["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack1);
+			packContainer.append(starterPack);
 		}
 
 		// let equip2 = json.starting_equipment_options;
@@ -218,10 +250,14 @@ const fetchSupportData = async () => {
 		// 	equipPack5,
 		// 	equipPack6
 		// );
-		container.append(goBack);
+		container.append(
+			profContainer,
+			profChoicesContainer,
+			packContainer,
+			goBack
+		);
 		main.append(container);
 
-		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
 			main.removeChild(container);
 			fetchSupportData();
@@ -273,16 +309,25 @@ const fetchSupportData = async () => {
 		const container = document.createElement("div");
 		container.id = "class-box";
 		main.append(container);
+		container.append(rangerName, rangerInfo);
 
 		const proficiencies = document.createElement("ul");
-		const proficiencieschoice = document.createElement("ul");
+		const proficienciesChoice = document.createElement("ul");
 		const starterPack = document.createElement("ul");
 		const health = document.createElement("h3");
 		const classIMG = document.createElement("img");
 		const goBack = document.createElement("button");
+		const profContainer = document.createElement("div");
+		const profChoicesContainer = document.createElement("div");
+		const packContainer = document.createElement("div");
 
+		health.className = "class-health";
+		classIMG.className = "classIMG";
+		profContainer.className = "proficiencies";
+		profChoicesContainer.className = "proficiencies-choice";
+		packContainer.className = "starter-pack";
 		proficiencies.innerHTML = "List of proficiencies: ";
-		proficiencieschoice.innerHTML = "Select Two: ";
+		proficienciesChoice.innerHTML = "Select Three: ";
 		starterPack.innerHTML = "Starts with: ";
 		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
 		classIMG.src = "images/ranger.png";
@@ -298,13 +343,15 @@ const fetchSupportData = async () => {
 			proficiency.innerHTML = prof.name;
 			container.append(proficiencies);
 			proficiencies.append(proficiency);
+			profContainer.append(proficiencies);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
-			const proficiencychoice = document.createElement("li");
-			proficiencychoice.innerHTML = choice.name.replace("Skill: ", "");
-			container.append(proficiencieschoice);
-			proficiencieschoice.append(proficiencychoice);
+			const proficiencyChoice = document.createElement("li");
+			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
+			container.append(proficienciesChoice);
+			proficienciesChoice.append(proficiencyChoice);
+			profChoicesContainer.append(proficienciesChoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
@@ -312,6 +359,7 @@ const fetchSupportData = async () => {
 			equipPack1.innerHTML = equip1["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack1);
+			packContainer.append(starterPack);
 		}
 
 		for (let equip2 of json.starting_equipment_options) {
@@ -319,8 +367,14 @@ const fetchSupportData = async () => {
 			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack2);
+			packContainer.append(starterPack);
 		}
-		container.append(goBack);
+		container.append(
+			profContainer,
+			profChoicesContainer,
+			packContainer,
+			goBack
+		);
 		main.append(container);
 
 		// const goBack = document.querySelector("button");
@@ -376,6 +430,7 @@ const fetchSupportData = async () => {
 		const container = document.createElement("div");
 		container.id = "class-box";
 		main.append(container);
+		container.append(rogueName, rogueInfo);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -383,15 +438,22 @@ const fetchSupportData = async () => {
 		const health = document.createElement("h3");
 		const classIMG = document.createElement("img");
 		const goBack = document.createElement("button");
+		const profContainer = document.createElement("div");
+		const profChoicesContainer = document.createElement("div");
+		const packContainer = document.createElement("div");
 
+		health.className = "class-health";
+		classIMG.className = "classIMG";
+		profContainer.className = "proficiencies";
+		profChoicesContainer.className = "proficiencies-choice";
+		packContainer.className = "starter-pack";
 		proficiencies.innerHTML = "List of proficiencies: ";
-		proficienciesChoice.innerHTML = "Select Two: ";
+		proficienciesChoice.innerHTML = "Select Four: ";
 		starterPack.innerHTML = "Starts with: ";
 		health.innerHTML = `Starting Health Points: ${json.hit_die}`;
 		classIMG.src = "images/rogue.png";
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
-
 		container.append(classIMG, health);
 
 		// class info generation
@@ -401,6 +463,7 @@ const fetchSupportData = async () => {
 			proficiency.innerHTML = prof.name;
 			container.append(proficiencies);
 			proficiencies.append(proficiency);
+			profContainer.append(proficiencies);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
@@ -408,6 +471,7 @@ const fetchSupportData = async () => {
 			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
+			profChoicesContainer.append(proficienciesChoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
@@ -415,6 +479,7 @@ const fetchSupportData = async () => {
 			equipPack1.innerHTML = equip1["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack1);
+			packContainer.append(starterPack);
 		}
 
 		// const equipPack2 = document.createElement("li");
@@ -436,7 +501,12 @@ const fetchSupportData = async () => {
 		// container.append(starterPack);
 		// starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
-		container.append(goBack);
+		container.append(
+			profContainer,
+			profChoicesContainer,
+			packContainer,
+			goBack
+		);
 		main.append(container);
 
 		goBack.addEventListener("click", function () {
