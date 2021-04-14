@@ -23,7 +23,6 @@ const fetchSupportData = async () => {
 	// ASSIGN CLASSES
 	// BARD
 
-	// bard.className = "class-option-A";
 	bard.className = "class-filter";
 	bard.id = "bard";
 	bardName.className = "class-header";
@@ -224,32 +223,6 @@ const fetchSupportData = async () => {
 			packContainer.append(starterPack);
 		}
 
-		// let equip2 = json.starting_equipment_options;
-		// const equipPack2 = document.createElement("li");
-		// const equipPack3 = document.createElement("li");
-		// const equipPack4 = document.createElement("li");
-		// const equipPack5 = document.createElement("li");
-		// const equipPack6 = document.createElement("li");
-
-		// equipPack2.innerHTML =
-		// 	json.starting_equipment_options[0]["from"][0]["equipment"]["name"];
-		// equipPack3.innerHTML =
-		// 	json.starting_equipment_options[1]["from"][0]["0"]["equipment"]["name"];
-		// equipPack4.innerHTML =
-		// 	json.starting_equipment_options[1]["from"][0]["1"]["equipment_option"][
-		// 		"from"
-		// 	]["equipment_category"]["name"];
-		// equipPack5.innerHTML =
-		// 	json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
-		// equipPack6.innerHTML =
-		// 	json.starting_equipment_options[3]["from"][0]["equipment"]["name"];
-		// starterPack.append(
-		// 	equipPack2,
-		// 	equipPack3,
-		// 	equipPack4,
-		// 	equipPack5,
-		// 	equipPack6
-		// );
 		container.append(
 			profContainer,
 			profChoicesContainer,
@@ -282,7 +255,6 @@ const fetchSupportData = async () => {
 
 	// assign classes
 
-	ranger.className = "class-option-A";
 	ranger.className = "class-filter";
 	ranger.id = "ranger";
 	rangerName.className = "class-header";
@@ -402,7 +374,6 @@ const fetchSupportData = async () => {
 
 	// assign classes
 
-	rogue.className = "class-option-B";
 	rogue.className = "class-filter";
 	rogue.id = "rogue";
 	rogueName.className = "class-header";
@@ -481,25 +452,6 @@ const fetchSupportData = async () => {
 			starterPack.append(equipPack1);
 			packContainer.append(starterPack);
 		}
-
-		// const equipPack2 = document.createElement("li");
-		// const equipPack3 = document.createElement("li");
-		// const equipPack4 = document.createElement("li");
-		// const equipPack5 = document.createElement("li");
-
-		// equipPack2.innerHTML =
-		// 	json.starting_equipment_options[0]["from"][0]["0"]["equipment"]["name"];
-		// equipPack3.innerHTML =
-		// 	json.starting_equipment_options[0]["from"][0]["1"]["equipment_option"][
-		// 		"from"
-		// 	]["equipment_category"]["name"];
-		// equipPack4.innerHTML =
-		// 	json.starting_equipment_options[1]["from"][0]["equipment"]["name"];
-		// equipPack5.innerHTML =
-		// 	json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
-
-		// container.append(starterPack);
-		// starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
 		container.append(
 			profContainer,
