@@ -52,16 +52,20 @@ const fetchStrengthData = async () => {
 		container.append(barbName, barbInfo);
 
 		const proficiencies = document.createElement("ul");
-		proficiencies.className = "proficiencies";
 		const proficienciesChoice = document.createElement("ul");
-		proficienciesChoice.className = "proficiencies-choice";
 		const starterPack = document.createElement("ul");
-		starterPack.className = "starter-pack";
+
 		const health = document.createElement("h3");
 		health.className = "class-health";
 		const classIMG = document.createElement("img");
 		classIMG.className = "classIMG";
 		const goBack = document.createElement("button");
+		const profContainer = document.createElement("div");
+		profContainer.className = "proficiencies";
+		const profChoicesContainer = document.createElement("div");
+		profChoicesContainer.className = "proficiencies-choice";
+		const packContainer = document.createElement("div");
+		packContainer.className = "starter-pack";
 
 		proficiencies.innerHTML = "List of proficiencies: ";
 		proficienciesChoice.innerHTML = "Select Two: ";
@@ -80,6 +84,7 @@ const fetchStrengthData = async () => {
 			proficiency.innerHTML = prof.name;
 			container.append(proficiencies);
 			proficiencies.append(proficiency);
+			profContainer.append(proficiencies);
 		}
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
@@ -87,6 +92,7 @@ const fetchStrengthData = async () => {
 			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficienciesChoice);
 			proficienciesChoice.append(proficiencyChoice);
+			profChoicesContainer.append(proficienciesChoice);
 		}
 
 		for (let equip1 of json.starting_equipment) {
@@ -94,6 +100,7 @@ const fetchStrengthData = async () => {
 			equipPack1.innerHTML = equip1["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack1);
+			packContainer.append(starterPack);
 		}
 
 		for (let equip2 of json.starting_equipment_options) {
@@ -101,8 +108,15 @@ const fetchStrengthData = async () => {
 			equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
 			container.append(starterPack);
 			starterPack.append(equipPack2);
+			packContainer.append(starterPack);
 		}
-		container.append(goBack);
+
+		container.append(
+			profContainer,
+			profChoicesContainer,
+			packContainer,
+			goBack
+		);
 		main.append(container);
 
 		goBack.addEventListener("click", function () {

@@ -185,6 +185,8 @@
 	padding: 7px;
 	margin: 5px;
 	font-size: 18px;
+	width: 120px;
+	height: 45px;
 }
 
 .button:hover {
@@ -248,39 +250,40 @@
 
 #class-box {
 	display: grid;
-	/* grid-template-columns: 250px 250px 250px;
-	grid-template-rows: 210px 210px 210px 210px 80px; */
+	grid-gap: 45px;
+	grid-template-columns: 120px 80px 140px 80px 140px;
+	grid-template-rows: 60px 50px 100px 210px 80px;
 	grid-template-areas:
-		"img header header"
-		"img chp chp"
-		"img info info"
-		"pack prof profchoice"
-		". button .";
+		"img img . header header"
+		"img img . chp chp"
+		"img img . info info"
+		"pack . prof  . profchoice"
+		". . button . .";
 	margin: auto;
-	padding: 20px;
+	padding: 30px;
 	border-radius: 18px;
-	background-color: white;
+	background-color: var(--secondary-light);
+	color: var(--text);
 	box-sizing: 5px 5px 15px rgba(0, 0, 0, 0.9);
-	/* text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center; */
-	overflow: hidden;
-	height: 100vh;
+	height: 90vh;
 	width: 100vh;
+
+	align-content: center;
+	justify-content: center;
+	grid-auto-flow: column;
 }
 .classIMG {
 	grid-area: img;
 }
 
 #class-box ul {
-	list-style: none;
 	grid-area: title;
+	font-size: 25px;
 }
 
 #class-box ul li {
-	list-style: none;
 	grid-area: text;
+	font-size: 16px;
 }
 
 .button {
@@ -289,9 +292,11 @@
 
 .class-header {
 	grid-area: header;
+	font-size: 30px;
 }
 .class-health {
 	grid-area: chp;
+	font-size: 20px;
 }
 
 .class-info {
@@ -312,6 +317,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 1;
 }
 
 .footer a {
