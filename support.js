@@ -167,7 +167,7 @@ const fetchSupportData = async () => {
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		container.append(health);
+		container.append(classIMG, health);
 
 		// class info generation
 
@@ -218,7 +218,7 @@ const fetchSupportData = async () => {
 		// 	equipPack5,
 		// 	equipPack6
 		// );
-		container.append(classIMG, goBack);
+		container.append(goBack);
 		main.append(container);
 
 		// const goBack = document.querySelector("button");

@@ -1,23 +1,17 @@
-const main = document.querySelector(".main-class");
-const mainHeader = document.querySelector("#main-class-header");
+const main = document.querySelector("#main-body");
+const mainHeader = document.querySelector(".main-class-header");
+const mainHeaderIMG = document.querySelector(".main-class-img");
+const mainClassStrength = document.querySelector("#main-class-body");
 
 const fetchMagicData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
 
 	const magicContainer = document.createElement("div");
-	magicContainer.className = "main-class-container";
+	magicContainer.className = "main-class-body";
+	main.append(mainHeader);
+	mainHeader.append(mainHeaderIMG);
 	main.append(magicContainer);
-
-	function saveClass(classDiv) {
-		let object = document.querySelectorAll(".class-filter");
-		for (let i = 0; i < object.length; i++) {
-			let removeID = document.getElementById(object[i]["id"]);
-			if (removeID !== classDiv) {
-				magicContainer.removeChild(removeID);
-			}
-		}
-	}
 
 	// cleric
 
@@ -29,7 +23,6 @@ const fetchMagicData = async () => {
 	// ASSIGN CLASSES
 	// cleric
 
-	cleric.className = "class-option-A";
 	cleric.className = "class-filter";
 	cleric.id = "cleric";
 	clericName.className = "class-header";
@@ -54,8 +47,8 @@ const fetchMagicData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		magicContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -103,19 +96,20 @@ const fetchMagicData = async () => {
 		// 	container.append(starterPack);
 		// 	starterPack.append(equipPack2);
 		// }
-		cleric.removeChild(clericButton);
-		cleric.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(magicContainer);
+			main.removeChild(container);
 			fetchMagicData();
 		});
 	};
 
 	const submitcleric = document.querySelector("#cleric-button");
 	submitcleric.addEventListener("click", function () {
-		saveClass(cleric);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(magicContainer);
 		fetchClericData();
 	});
 
@@ -128,7 +122,6 @@ const fetchMagicData = async () => {
 
 	// assign classes
 
-	sorcerer.className = "class-option-B";
 	sorcerer.className = "class-filter";
 	sorcerer.id = "sorcerer";
 	sorcererName.className = "class-header";
@@ -156,8 +149,8 @@ const fetchMagicData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		magicContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficiencychoices = document.createElement("ul");
@@ -174,7 +167,7 @@ const fetchMagicData = async () => {
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		container.append(health);
+		container.append(classIMG, health);
 
 		// class info generation
 
@@ -225,20 +218,20 @@ const fetchMagicData = async () => {
 		// 	equipPack5,
 		// 	equipPack6
 		// );
-		container.append(starterPack, classIMG);
-		sorcerer.removeChild(sorcererButton);
-		sorcerer.append(container, goBack);
+		container.append(starterPack, goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(magicContainer);
+			main.removeChild(container);
 			fetchMagicData();
 		});
 	};
 
 	const submitSorcerer = document.querySelector("#sorcerer-button");
 	submitSorcerer.addEventListener("click", function () {
-		saveClass(sorcerer);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(magicContainer);
 		fetchSorcererData();
 	});
 
@@ -253,7 +246,6 @@ const fetchMagicData = async () => {
 
 	// assign classes
 
-	warlock.className = "class-option-A";
 	warlock.className = "class-filter";
 	warlock.id = "warlock";
 	warlockName.className = "class-header";
@@ -278,8 +270,8 @@ const fetchMagicData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		magicContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficiencieschoice = document.createElement("ul");
@@ -327,19 +319,20 @@ const fetchMagicData = async () => {
 		// 	container.append(starterPack);
 		// 	starterPack.append(equipPack2);
 		// }
-		warlock.removeChild(warlockButton);
-		warlock.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(magicContainer);
+			main.removeChild(container);
 			fetchMagicData();
 		});
 	};
 
 	const submitWarlock = document.querySelector("#warlock-button");
 	submitWarlock.addEventListener("click", function () {
-		saveClass(warlock);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(magicContainer);
 		fetchWarlockData();
 	});
 
@@ -354,7 +347,6 @@ const fetchMagicData = async () => {
 
 	// assign classes
 
-	wizard.className = "class-option-B";
 	wizard.className = "class-filter";
 	wizard.id = "wizard";
 	wizardName.className = "class-header";
@@ -380,8 +372,8 @@ const fetchMagicData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		magicContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -398,7 +390,7 @@ const fetchMagicData = async () => {
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		container.append(health);
+		container.append(classIMG, health);
 
 		// class info generation
 
@@ -442,19 +434,19 @@ const fetchMagicData = async () => {
 		// container.append(starterPack);
 		// starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
-		container.append(classIMG);
-		wizard.removeChild(wizardButton);
-		wizard.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		goBack.addEventListener("click", function () {
-			main.removeChild(magicContainer);
+			main.removeChild(container);
 			fetchMagicData();
 		});
 	};
 
 	const submitwizard = document.querySelector("#wizard-button");
 	submitwizard.addEventListener("click", function () {
-		saveClass(wizard);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(magicContainer);
 		fetchWizardData();
 	});
 };

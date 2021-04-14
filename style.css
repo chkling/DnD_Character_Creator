@@ -75,7 +75,7 @@
 	background-image: url(images/nightsky.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 140vh;
+	height: 230vh;
 	color: var(--text);
 }
 
@@ -84,10 +84,13 @@
 	flex-direction: column;
 	align-items: flex-start;
 	margin: 20px 40px;
+	padding: 40px 20px;
+	border-top: 2px solid lightblue;
+	border-bottom: 2px solid lightblue;
 }
 
 .main-info h1 {
-	font-size: 20px;
+	font-size: 25px;
 	float: left;
 	margin-bottom: 15px;
 }
@@ -96,6 +99,34 @@
 	font-size: 18px;
 	text-indent: 40px;
 	margin: 5px;
+}
+
+#main-img-holder {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.main-img {
+	width: 1000px;
+	height: 500px;
+	border-radius: 5px;
+}
+
+.options {
+	padding: 20px;
+	margin: 10px;
+	border-bottom: 2px solid lightblue;
+}
+
+.footer {
+	padding: 20px;
+	color: white;
+}
+
+.footer a {
+	color: white;
+	text-decoration: none;
 }
 
 .class-option-A {
