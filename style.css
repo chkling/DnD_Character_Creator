@@ -5,6 +5,9 @@
 	--secondary-light: #4c41455b;
 	--body: #4a4c41;
 	--text: #f4f4f4;
+	--firered: #d01c1f69;
+	--firegreen: #22d90060;
+	--fireblue: #0074ab69;
 }
 
 * {
@@ -76,7 +79,7 @@
 	background-image: url(images/nightsky.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 190vh;
+	height: 200vh;
 	color: var(--text);
 }
 
@@ -126,11 +129,13 @@
 }
 .marketing h2 {
 	font-weight: 400;
+	padding: 20px;
 }
 
 .marketing .col-lg-4 p {
 	margin-right: 0.75rem;
 	margin-left: 0.75rem;
+	padding: 5px;
 }
 
 .class-container {
@@ -223,18 +228,46 @@
 	border-radius: 10px;
 	border: 2px solid var(--main-light);
 	width: 400px;
-	height: 280px;
+	height: 300px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	transition: background-color 0.25s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
 }
 
 .class-filter:hover {
-	background-color: var(--main);
+	color: var(--text);
 	border: 2px solid var(--main);
 }
+
+#barbarian:hover,
+#fighter:hover,
+#monk:hover,
+#paladin:hover {
+	background-color: var(--firered);
+}
+
+#bard:hover,
+#druid:hover,
+#ranger:hover,
+#rogue:hover {
+	background-color: var(--firegreen);
+}
+
+#cleric:hover,
+#warlock:hover,
+#wizard:hover,
+#sorcerer:hover {
+	background-color: var(--fireblue);
+}
+
+/* .class-filter:hover {
+	background-color: var(--fire);
+	color: var(--text);
+	text-shadow: none;
+	border: 2px solid var(--main);
+} */
 
 .main-class-img {
 	height: 500px;
@@ -459,6 +492,6 @@
 
 @media (min-width: 1200px) {
 	#main-container {
-		height: 130vw;
+		height: 138vw;
 	}
 }
