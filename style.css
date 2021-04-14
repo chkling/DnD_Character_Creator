@@ -72,9 +72,11 @@
 
 #main-container {
 	padding: 10px;
-	background-color: var(--body);
+	background-image: url(images/nightsky.jpeg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 140vh;
 	color: var(--text);
-	height: 100%;
 }
 
 .main-info {
@@ -181,7 +183,7 @@
 	margin: 20px;
 }
 
-.main-class-strength {
+.main-class-body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;

@@ -1,23 +1,17 @@
-const main = document.querySelector(".main-class");
-const mainHeader = document.querySelector("#main-class-header");
+const main = document.querySelector("#main-body");
+const mainHeader = document.querySelector(".main-class-header");
+const mainHeaderIMG = document.querySelector(".main-class-img");
+const mainClassStrength = document.querySelector("#main-class-body");
 
 const fetchSupportData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
 
 	const supportContainer = document.createElement("div");
-	supportContainer.className = "main-class-container";
+	supportContainer.className = "main-class-body";
+	main.append(mainHeader);
+	mainHeader.append(mainHeaderIMG);
 	main.append(supportContainer);
-
-	function saveClass(classDiv) {
-		let object = document.querySelectorAll(".class-filter");
-		for (let i = 0; i < object.length; i++) {
-			let removeID = document.getElementById(object[i]["id"]);
-			if (removeID !== classDiv) {
-				supportContainer.removeChild(removeID);
-			}
-		}
-	}
 
 	// BARD
 
@@ -29,7 +23,7 @@ const fetchSupportData = async () => {
 	// ASSIGN CLASSES
 	// BARD
 
-	bard.className = "class-option-A";
+	// bard.className = "class-option-A";
 	bard.className = "class-filter";
 	bard.id = "bard";
 	bardName.className = "class-header";
@@ -54,8 +48,8 @@ const fetchSupportData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		supportContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -103,19 +97,20 @@ const fetchSupportData = async () => {
 			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-		bard.removeChild(bardButton);
-		bard.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(supportContainer);
+			main.removeChild(container);
 			fetchSupportData();
 		});
 	};
 
 	const submitBard = document.querySelector("#bard-button");
 	submitBard.addEventListener("click", function () {
-		saveClass(bard);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(supportContainer);
 		fetchBardData();
 	});
 
@@ -155,9 +150,8 @@ const fetchSupportData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		supportContainer.append(container);
-
+		container.id = "class-box";
+		main.append(container);
 		const proficiencies = document.createElement("ul");
 		const proficiencychoices = document.createElement("ul");
 		const starterPack = document.createElement("ul");
@@ -186,7 +180,7 @@ const fetchSupportData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencychoice = document.createElement("li");
-			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
+			proficiencychoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficiencychoices);
 			proficiencychoices.append(proficiencychoice);
 		}
@@ -224,20 +218,20 @@ const fetchSupportData = async () => {
 		// 	equipPack5,
 		// 	equipPack6
 		// );
-		container.append(starterPack, classIMG);
-		druid.removeChild(druidButton);
-		druid.append(container, goBack);
+		container.append(classIMG, goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(supportContainer);
+			main.removeChild(container);
 			fetchSupportData();
 		});
 	};
 
 	const submitDruid = document.querySelector("#druid-button");
 	submitDruid.addEventListener("click", function () {
-		saveClass(druid);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(supportContainer);
 		fetchDruidData();
 	});
 
@@ -277,8 +271,8 @@ const fetchSupportData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		supportContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficiencieschoice = document.createElement("ul");
@@ -308,7 +302,7 @@ const fetchSupportData = async () => {
 
 		for (let choice of json.proficiency_choices[0]["from"]) {
 			const proficiencychoice = document.createElement("li");
-			proficiencyChoice.innerHTML = choice.name.replace("Skill: ", "");
+			proficiencychoice.innerHTML = choice.name.replace("Skill: ", "");
 			container.append(proficiencieschoice);
 			proficiencieschoice.append(proficiencychoice);
 		}
@@ -326,19 +320,20 @@ const fetchSupportData = async () => {
 			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-		ranger.removeChild(rangerButton);
-		ranger.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(supportContainer);
+			main.removeChild(container);
 			fetchSupportData();
 		});
 	};
 
 	const submitRanger = document.querySelector("#ranger-button");
 	submitRanger.addEventListener("click", function () {
-		saveClass(ranger);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(supportContainer);
 		fetchRangerData();
 	});
 
@@ -379,8 +374,8 @@ const fetchSupportData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		supportContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -397,7 +392,7 @@ const fetchSupportData = async () => {
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		container.append(health);
+		container.append(classIMG, health);
 
 		// class info generation
 
@@ -441,19 +436,19 @@ const fetchSupportData = async () => {
 		// container.append(starterPack);
 		// starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
-		container.append(classIMG);
-		rogue.removeChild(rogueButton);
-		rogue.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		goBack.addEventListener("click", function () {
-			main.removeChild(supportContainer);
+			main.removeChild(container);
 			fetchSupportData();
 		});
 	};
 
 	const submitRogue = document.querySelector("#rogue-button");
 	submitRogue.addEventListener("click", function () {
-		saveClass(rogue);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(supportContainer);
 		fetchRogueData();
 	});
 };

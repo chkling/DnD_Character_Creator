@@ -1,27 +1,17 @@
 const main = document.querySelector("#main-body");
 const mainHeader = document.querySelector(".main-class-header");
 const mainHeaderIMG = document.querySelector(".main-class-img");
-const mainClassStrength = document.querySelector("#main-class-strength");
+const mainClassStrength = document.querySelector("#main-class-body");
 
 const fetchStrengthData = async () => {
 	let response = await fetch("https://www.dnd5eapi.co/api/classes/");
 	let json = await response.json();
 
 	const strengthContainer = document.createElement("div");
-	strengthContainer.className = "main-class-strength";
+	strengthContainer.className = "main-class-body";
 	main.append(mainHeader);
 	mainHeader.append(mainHeaderIMG);
 	main.append(strengthContainer);
-
-	function saveClass(classDiv) {
-		let object = document.querySelectorAll(".class-filter");
-		for (let i = 0; i < object.length; i++) {
-			let removeID = document.getElementById(object[i]["id"]);
-			if (removeID !== classDiv) {
-				strengthContainer.removeChild(removeID);
-			}
-		}
-	}
 
 	// BARBARIAN
 
@@ -33,7 +23,7 @@ const fetchStrengthData = async () => {
 	// ASSIGN CLASSES
 	// BARBARIAN
 
-	barbarian.className = "class-option-A";
+	// barbarian.className = "class-option-A";
 	barbarian.className = "class-filter";
 	barbarian.id = "barbarian";
 	barbName.className = "class-header";
@@ -120,7 +110,6 @@ const fetchStrengthData = async () => {
 
 	const submitBarb = document.querySelector("#barb-button");
 	submitBarb.addEventListener("click", function () {
-		// saveClass(barbarian);
 		mainHeader.removeChild(mainHeaderIMG);
 		main.removeChild(strengthContainer);
 		fetchBarbData();
