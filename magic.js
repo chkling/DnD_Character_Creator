@@ -93,6 +93,13 @@ const fetchMagicData = async () => {
 			proficienciesChoice.append(proficiencyChoice);
 			profChoicesContainer.append(proficienciesChoice);
 		}
+		for (let equip1 of json.starting_equipment) {
+			const equipPack1 = document.createElement("li");
+			equipPack1.innerHTML = equip1["equipment"]["name"];
+			container.append(starterPack);
+			starterPack.append(equipPack1);
+			packContainer.append(starterPack);
+		}
 
 		const spellName1 = document.createElement("li");
 		const spellName2 = document.createElement("li");
@@ -229,32 +236,26 @@ const fetchMagicData = async () => {
 			packContainer.append(starterPack);
 		}
 
-		// let equip2 = json.starting_equipment_options;
-		// const equipPack2 = document.createElement("li");
-		// const equipPack3 = document.createElement("li");
-		// const equipPack4 = document.createElement("li");
-		// const equipPack5 = document.createElement("li");
-		// const equipPack6 = document.createElement("li");
+		const spellName1 = document.createElement("li");
+		const spellName2 = document.createElement("li");
+		const spellName3 = document.createElement("li");
+		const spellName4 = document.createElement("li");
+		const spellName5 = document.createElement("li");
+		spellName1.innerHTML = json.spellcasting["info"][0]["name"];
+		spellName2.innerHTML = json.spellcasting["info"][1]["name"];
+		spellName3.innerHTML = json.spellcasting["info"][2]["name"];
+		spellName4.innerHTML = json.spellcasting["info"][3]["name"];
+		spellName5.innerHTML = json.spellcasting["info"][4]["name"];
+		starterPack.append(
+			spellName1,
+			spellName2,
+			spellName3,
+			spellName4,
+			spellName5
+		);
+		container.append(starterPack);
+		packContainer.append(starterPack);
 
-		// equipPack2.innerHTML =
-		// 	json.starting_equipment_options[0]["from"][0]["equipment"]["name"];
-		// equipPack3.innerHTML =
-		// 	json.starting_equipment_options[1]["from"][0]["0"]["equipment"]["name"];
-		// equipPack4.innerHTML =
-		// 	json.starting_equipment_options[1]["from"][0]["1"]["equipment_option"][
-		// 		"from"
-		// 	]["equipment_category"]["name"];
-		// equipPack5.innerHTML =
-		// 	json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
-		// equipPack6.innerHTML =
-		// 	json.starting_equipment_options[3]["from"][0]["equipment"]["name"];
-		// starterPack.append(
-		// 	equipPack2,
-		// 	equipPack3,
-		// 	equipPack4,
-		// 	equipPack5,
-		// 	equipPack6
-		// );
 		container.append(
 			profContainer,
 			profChoicesContainer,
@@ -367,12 +368,27 @@ const fetchMagicData = async () => {
 			packContainer.append(starterPack);
 		}
 
-		// for (let equip2 of json.starting_equipment_options) {
-		// 	const equipPack2 = document.createElement("li");
-		// 	equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
-		// 	container.append(starterPack);
-		// 	starterPack.append(equipPack2);
-		// }
+		const spellName1 = document.createElement("li");
+		const spellName2 = document.createElement("li");
+		const spellName3 = document.createElement("li");
+		const spellName4 = document.createElement("li");
+		const spellName5 = document.createElement("li");
+		spellName1.innerHTML = json.spellcasting["info"][0]["name"];
+		spellName2.innerHTML = json.spellcasting["info"][1]["name"];
+		spellName3.innerHTML = json.spellcasting["info"][2]["name"];
+		spellName4.innerHTML = json.spellcasting["info"][3]["name"];
+		spellName5.innerHTML = json.spellcasting["info"][4]["name"];
+		starterPack.append(
+			spellName1,
+			spellName2,
+			spellName3,
+			spellName4,
+			spellName5
+		);
+
+		container.append(starterPack);
+		packContainer.append(starterPack);
+
 		container.append(
 			profContainer,
 			profChoicesContainer,
@@ -486,24 +502,26 @@ const fetchMagicData = async () => {
 			packContainer.append(starterPack);
 		}
 
-		// const equipPack2 = document.createElement("li");
-		// const equipPack3 = document.createElement("li");
-		// const equipPack4 = document.createElement("li");
-		// const equipPack5 = document.createElement("li");
+		const spellName1 = document.createElement("li");
+		const spellName2 = document.createElement("li");
+		const spellName3 = document.createElement("li");
+		const spellName4 = document.createElement("li");
+		const spellName5 = document.createElement("li");
+		spellName1.innerHTML = json.spellcasting["info"][0]["name"];
+		spellName2.innerHTML = json.spellcasting["info"][1]["name"];
+		spellName3.innerHTML = json.spellcasting["info"][2]["name"];
+		spellName4.innerHTML = json.spellcasting["info"][3]["name"];
+		spellName5.innerHTML = json.spellcasting["info"][4]["name"];
+		starterPack.append(
+			spellName1,
+			spellName2,
+			spellName3,
+			spellName4,
+			spellName5
+		);
 
-		// equipPack2.innerHTML =
-		// 	json.starting_equipment_options[0]["from"][0]["0"]["equipment"]["name"];
-		// equipPack3.innerHTML =
-		// 	json.starting_equipment_options[0]["from"][0]["1"]["equipment_option"][
-		// 		"from"
-		// 	]["equipment_category"]["name"];
-		// equipPack4.innerHTML =
-		// 	json.starting_equipment_options[1]["from"][0]["equipment"]["name"];
-		// equipPack5.innerHTML =
-		// 	json.starting_equipment_options[2]["from"][0]["equipment"]["name"];
-
-		// container.append(starterPack);
-		// starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
+		container.append(starterPack);
+		packContainer.append(starterPack);
 
 		container.append(
 			profContainer,
