@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<meta
+			name="author"
+			content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+		/>
+		<meta name="generator" content="Hugo 0.82.0" />
+		<title>D&D</title>
 		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
 			rel="stylesheet"
-			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 			crossorigin="anonymous"
 		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
-			rel="stylesheet"
-		/>
-		<title>D&D</title>
-	</head>
+        <link rel="stylesheet" href="style.css">
+        <link href="carousel.css" rel="stylesheet" />
+		<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+					font-size: 3.5rem;
+				}
+			}
+		</style>
+
 	<body>
 		<div id="navbar-main">
-			<a id="home" href="index.html">DUNGEONS AND DRAGONS CHARACTER BUILDER</a>
-			<div id="navbar-menu">
-				<a class="nav-button" href="magic.html">SPELLCASTING</a>
-				<a class="nav-button" href="support.html">SUPPORT</a>
-				<a class="nav-button" href="strength.html">STRENGTH</a>
-				<a class="nav-button" id="highlighted" href="index.html">HOME</a>
-			</div>
-		</div>
+                <a id="home" href="index.html">DUNGEONS AND DRAGONS CHARACTER BUILDER</a>
+                <div id="navbar-menu">
+                    <a class="nav-button" href="magic.html">SPELLCASTING</a>
+                    <a class="nav-button" href="support.html">SUPPORT</a>
+                    <a class="nav-button" href="strength.html">STRENGTH</a>
+                    <a class="nav-button" id="highlighted" href="index.html">HOME</a>
+                </div>
+        </div>
+
 		<div id="main-container">
 			<div class="main-info">
 				<h1>What is Dungeons and Dragons?</h1>
@@ -66,13 +83,33 @@
 					adventurers may advance in more than one class as time goes on, the
 					twelve basic classes can be generally categorized into three groups.
 				</p>
-			</div>
-			<div class="class-option-A">
-				<h1 class="class-header">The Path of Strength...</h1>
-				<div class="class-container">
-					<img src="images/DnD_Dwarf.png" alt="" />
-					<p>
-						Strength measures a character’s muscle, endurance and stamina. This
+			</div> 
+		
+
+			<!-- Marketing messaging and featurettes
+  ================================================== 
+			Wrap the rest of the page in another container to center all the content. -->
+
+			<div class="container marketing">
+				<!-- Three columns of text below the carousel -->
+				<div class="row">
+					<div class="col-lg-4">
+						<img
+							class="bd-placeholder-img rounded-circle"
+							src="images/DnD_Dwarf.png"
+							width="140"
+							height="140"
+							xmlns="http://www.w3.org/2000/svg"
+							role="img"
+							aria-label="Placeholder: 140x140"
+							preserveAspectRatio="xMidYMid slice"
+							focusable="false"
+						>
+							
+
+						<h2>Strength</h2>
+						<p>
+							Strength measures a character’s muscle, endurance and stamina. This
 						ability is the prime requisite of warriors because they must be
 						physically powerful in order to wear armor and wield heavy weapons.
 						Exceptional strength improves the character's chance to hit an
@@ -81,14 +118,29 @@
 						encumbrance, and increases the character's ability to force open
 						doors and similar portals.
 					</p>
-				</div>
-				<a class="choose-class-button" href="strength.html">Choose this path</a>
-			</div>
-			<div class="class-option-B">
-				<h1 class="class-header">The Path of Support...</h1>
-				<div class="class-container">
-					<p>
-						Support characters may not be able to take as much damage or cast as
+						</p>
+						<p>
+							<a class="choose-class-button" href="strength.html">Choose this Path &raquo;</a>
+						</p>
+					</div>
+					<!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<img
+						src="images/DnD_gnome.png"
+							class="bd-placeholder-img rounded-circle"
+							width="140"
+							height="140"
+							xmlns="http://www.w3.org/2000/svg"
+							role="img"
+							aria-label="Placeholder: 140x140"
+							preserveAspectRatio="xMidYMid slice"
+							focusable="false"
+						>
+						
+
+						<h2>Support</h2>
+						<p>
+							Support characters may not be able to take as much damage or cast as
 						many spells as others, but their unique toolkit of skills is their
 						route to success. Often a skill of high importance is dexterity,
 						which encompasses several physical attributes including hand-eye
@@ -96,17 +148,28 @@
 						Dexterity affects a character's reaction to a threat or surprise,
 						his accuracy with thrown weapons and bows, and his ability to dodge
 						an enemy's blows.
-					</p>
-					<img src="images/DnD_gnome.png" alt="" />
-				</div>
-				<a class="choose-class-button" href="support.html">Choose this path</a>
-			</div>
-			<div class="class-option-A">
-				<h1 class="class-header">The Path of Spellcasting...</h1>
-				<div class="class-container">
-					<img src="images/DnD_Efreeti.png" alt="" />
-					<p>
-						Spellcasters mainly rely on specializing in intelligence.
+						</p>
+						<p>
+							<a class="choose-class-button" href="support.html">Choose this Path &raquo;</a>
+						</p>
+					</div>
+					<!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<img
+							src="images/DnD_Efreeti.png"
+							class="bd-placeholder-img rounded-circle"
+							width="140"
+							height="140"
+							xmlns="http://www.w3.org/2000/svg"
+							role="img"
+							aria-label="Placeholder: 140x140"
+							preserveAspectRatio="xMidYMid slice"
+							focusable="false"
+						>
+
+						<h2>Spellcasting</h2>
+						<p>
+							Spellcasters mainly rely on specializing in intelligence.
 						Intelligence represents a character's memory, reasoning, and
 						learning ability, including areas outside those measured by the
 						written word. Intelligence dictates the number of languages a
@@ -114,14 +177,26 @@
 						who must have keen minds to understand and memorize magical spells.
 						The magic user’s intelligence dictates which spells he can learn and
 						the number of spells he can memorize at one time.
-					</p>
+						</p>
+						<p>
+							<a class="choose-class-button" href="magic.html">Choose this Path &raquo;</a>
+						</p>
+					</div>
+					<!-- /.col-lg-4 -->
 				</div>
-				<a class="choose-class-button" href="magic.html">Choose this path</a>
+				<!-- /.row -->
+
+
 			</div>
-		</div>
-		<footer>
-			This is the footer where I link to the D&D website, give credit, do the
-			copyright thing
-		</footer>
+			<!-- /.container -->
+
+			<!-- FOOTER -->
+			<footer class="footer">
+					&copy; 2021 &middot;
+					<a href="https://dnd.wizards.com/">Information from Dungeons and Dragons Website</a> 
+				</p>
+			</footer>
+		</div> 
+	
 	</body>
 </html>

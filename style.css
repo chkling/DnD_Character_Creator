@@ -262,3 +262,9 @@
 .class-info {
 	grid-area: info;
 }
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

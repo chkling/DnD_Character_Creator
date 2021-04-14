@@ -2,12 +2,6 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
-	color: #5a5a5a;
-}
-
 /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
 
@@ -49,22 +43,15 @@ body {
 	margin-right: 0.75rem;
 	margin-left: 0.75rem;
 }
+
+/* .bd-placeholder-img-rounded-circle1 {
+	background-image: url(images/DnD_Dwarf.png);
+	background-image: center;
+} */
 /* rtl:end:ignore */
 
 /* Featurettes
   ------------------------- */
-
-.featurette-divider {
-	margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-	font-weight: 300;
-	line-height: 1;
-	/* rtl:remove */
-	letter-spacing: -0.05rem;
-}
 
 /* RESPONSIVE CSS
   -------------------------------------------------- */
