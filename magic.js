@@ -94,20 +94,27 @@ const fetchMagicData = async () => {
 			profChoicesContainer.append(proficienciesChoice);
 		}
 
-		for (let equip1 of json.starting_equipment) {
-			const equipPack1 = document.createElement("li");
-			equipPack1.innerHTML = equip1["equipment"]["name"];
-			container.append(starterPack);
-			starterPack.append(equipPack1);
-			packContainer.append(starterPack);
-		}
+		const spellName1 = document.createElement("li");
+		const spellName2 = document.createElement("li");
+		const spellName3 = document.createElement("li");
+		const spellName4 = document.createElement("li");
+		const spellName5 = document.createElement("li");
+		spellName1.innerHTML = json.spellcasting["info"][0]["name"];
+		spellName2.innerHTML = json.spellcasting["info"][1]["name"];
+		spellName3.innerHTML = json.spellcasting["info"][2]["name"];
+		spellName4.innerHTML = json.spellcasting["info"][3]["name"];
+		spellName5.innerHTML = json.spellcasting["info"][4]["name"];
+		starterPack.append(
+			spellName1,
+			spellName2,
+			spellName3,
+			spellName4,
+			spellName5
+		);
 
-		// for (let equip2 of json.starting_equipment_options) {
-		// 	const equipPack2 = document.createElement("li");
-		// 	equipPack2.innerHTML = equip2["from"][0]["equipment"]["name"];
-		// 	container.append(starterPack);
-		// 	starterPack.append(equipPack2);
-		// }
+		container.append(starterPack);
+		packContainer.append(starterPack);
+
 		container.append(
 			profContainer,
 			profChoicesContainer,
