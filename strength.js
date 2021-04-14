@@ -23,7 +23,6 @@ const fetchStrengthData = async () => {
 	// ASSIGN CLASSES
 	// BARBARIAN
 
-	// barbarian.className = "class-option-A";
 	barbarian.className = "class-filter";
 	barbarian.id = "barbarian";
 	barbName.className = "class-header";
@@ -98,7 +97,7 @@ const fetchStrengthData = async () => {
 			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-		// main.removeChild(barbButton);
+
 		container.append(goBack);
 		main.append(container);
 
@@ -146,14 +145,14 @@ const fetchStrengthData = async () => {
 
 	///////////// FIGHTER
 
-	// INSIDE BARBARIAN CLASS
+	// INSIDE FIGHTER CLASS
 	const fetchFighterData = async () => {
 		let response = await fetch("https://www.dnd5eapi.co/api/classes/fighter");
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		strengthContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficiencieschoice = document.createElement("ul");
@@ -170,7 +169,7 @@ const fetchStrengthData = async () => {
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		container.append(health);
+		container.append(classIMG, health);
 
 		// class info generation
 
@@ -221,19 +220,19 @@ const fetchStrengthData = async () => {
 			equipPack5,
 			equipPack6
 		);
-		container.append(starterPack, classIMG);
-		fighter.removeChild(fighterButton);
-		fighter.append(container, goBack);
+		container.append(starterPack, goBack);
+		main.append(container);
 
 		goBack.addEventListener("click", function () {
-			main.removeChild(strengthContainer);
+			main.removeChild(container);
 			fetchStrengthData();
 		});
 	};
 
 	const submitFighter = document.querySelector("#fighter-button");
 	submitFighter.addEventListener("click", function () {
-		saveClass(fighter);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(strengthContainer);
 		fetchFighterData();
 	});
 
@@ -273,8 +272,8 @@ const fetchStrengthData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		strengthContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -322,19 +321,20 @@ const fetchStrengthData = async () => {
 			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-		monk.removeChild(monkButton);
-		monk.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		// const goBack = document.querySelector("button");
 		goBack.addEventListener("click", function () {
-			main.removeChild(strengthContainer);
+			main.removeChild(container);
 			fetchStrengthData();
 		});
 	};
 
 	const submitMonk = document.querySelector("#monk-button");
 	submitMonk.addEventListener("click", function () {
-		saveClass(monk);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(strengthContainer);
 		fetchMonkData();
 	});
 
@@ -373,8 +373,8 @@ const fetchStrengthData = async () => {
 		let json = await response.json();
 
 		const container = document.createElement("div");
-		container.className = "class-box";
-		strengthContainer.append(container);
+		container.id = "class-box";
+		main.append(container);
 
 		const proficiencies = document.createElement("ul");
 		const proficienciesChoice = document.createElement("ul");
@@ -391,7 +391,7 @@ const fetchStrengthData = async () => {
 		goBack.innerHTML = "Go Back";
 		goBack.className = "button";
 
-		container.append(health);
+		container.append(classIMG, health);
 
 		// class info generation
 
@@ -435,19 +435,19 @@ const fetchStrengthData = async () => {
 		container.append(starterPack);
 		starterPack.append(equipPack2, equipPack3, equipPack4, equipPack5);
 
-		container.append(classIMG);
-		paladin.removeChild(paladinButton);
-		paladin.append(container, goBack);
+		container.append(goBack);
+		main.append(container);
 
 		goBack.addEventListener("click", function () {
-			main.removeChild(strengthContainer);
+			main.removeChild(container);
 			fetchStrengthData();
 		});
 	};
 
 	const submitPaladin = document.querySelector("#paladin-button");
 	submitPaladin.addEventListener("click", function () {
-		saveClass(paladin);
+		mainHeader.removeChild(mainHeaderIMG);
+		main.removeChild(strengthContainer);
 		fetchPaladinData();
 	});
 };
