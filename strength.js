@@ -140,7 +140,6 @@ const fetchStrengthData = async () => {
 
 	// assign classes
 
-	fighter.className = "class-option-B";
 	fighter.className = "class-filter";
 	fighter.id = "fighter";
 	fighterName.className = "class-header";
@@ -283,7 +282,6 @@ const fetchStrengthData = async () => {
 
 	// assign classes
 
-	monk.className = "class-option-A";
 	monk.className = "class-filter";
 	monk.id = "monk";
 	monkName.className = "class-header";
@@ -395,7 +393,6 @@ const fetchStrengthData = async () => {
 
 	// assign classes
 
-	paladin.className = "class-option-B";
 	paladin.className = "class-filter";
 	paladin.id = "paladin";
 	paladinName.className = "class-header";
