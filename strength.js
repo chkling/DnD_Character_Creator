@@ -49,11 +49,16 @@ const fetchStrengthData = async () => {
 		const container = document.createElement("div");
 		container.id = "class-box";
 		main.append(container);
+		container.append(barbName, barbInfo);
 
 		const proficiencies = document.createElement("ul");
+		proficiencies.className = "proficiencies";
 		const proficienciesChoice = document.createElement("ul");
+		proficienciesChoice.className = "proficiencies-choice";
 		const starterPack = document.createElement("ul");
+		starterPack.className = "starter-pack";
 		const health = document.createElement("h3");
+		health.className = "class-health";
 		const classIMG = document.createElement("img");
 		classIMG.className = "classIMG";
 		const goBack = document.createElement("button");
@@ -97,7 +102,6 @@ const fetchStrengthData = async () => {
 			container.append(starterPack);
 			starterPack.append(equipPack2);
 		}
-
 		container.append(goBack);
 		main.append(container);
 
