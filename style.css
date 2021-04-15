@@ -470,6 +470,13 @@
 		height: 300px;
 		padding: 20px;
 	}
+	#class-box {
+		display: flex;
+		flex-direction: column;
+		height: 120vh;
+		grid-gap: 0;
+		overflow: none;
+	}
 }
 
 @media (min-width: 551px) and (max-width: 750px) {
@@ -488,6 +495,10 @@
 		top: 0;
 		width: 140vw;
 		border-bottom: 2px lightblue solid;
+	}
+	#class-box {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
