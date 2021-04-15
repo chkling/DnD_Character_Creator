@@ -2,8 +2,7 @@ The Dungeons and Dragons Character Creator assists players in creating their adv
 
 This site mainly utilizes a combination of HTML and JavaScript with the Dungeons and Dragons API. The class cards are where most of the API information was implemented. Bootstrap and CSS were used to structure and style the pages, along with various artwork from the D&D website and other artists. This project also contains media queries for mobile responsiveness.
 
-<img width="1422" alt="Screen Shot 2021-04-15 at 11 00 53 AM" src="https://user-images.githubusercontent.com/71455657/114896361-445a4800-9dde-11eb-9009-f743fa465391.png">
-
+![Screen Shot 2021-04-15 at 11 51 56 AM](https://user-images.githubusercontent.com/71455657/114899370-e713c600-9de0-11eb-843e-7899e4949d22.png)
 
 <img width="1423" alt="Screen Shot 2021-04-15 at 11 05 45 AM" src="https://user-images.githubusercontent.com/71455657/114896404-4f14dd00-9dde-11eb-9633-0576b588c207.png">
 
