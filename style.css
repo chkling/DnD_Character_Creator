@@ -351,6 +351,7 @@
 	align-items: center;
 	justify-content: center;
 	z-index: 1;
+	margin-top: 25px;
 }
 
 .footer a {
@@ -478,20 +479,27 @@
 @media (min-width: 751px) and (max-width: 1000px) {
 	#main-container {
 		width: 150vw;
-		height: 380vh;
+		height: 220vh;
 	}
 	#navbar-main {
 		width: 150vw;
 	}
 }
-@media (max-width: 1000px) and (min-width: 1199px) {
+@media (min-width: 1001px) and (max-width: 1199px) {
 	#main-container {
-		height: 380vh;
+		height: 170vh;
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1500px) {
 	#main-container {
-		height: 138vw;
+		height: 260vh;
+	}
+}
+
+@media (min-width: 1501px) {
+	#main-container {
+		height: 200vh;
+		/* height: 240vh; */
 	}
 }
