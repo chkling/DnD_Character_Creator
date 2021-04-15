@@ -1,1 +1,3 @@
-# DnD_Character_Creator
+The Dungeons and Dragons Character Creator assists players in creating their adventurer’s class. After a short introduction to D&D, descriptions of three categories of class are outlined with the player’s ability to select which direction they would like to go. By clicking on the chosen path, the site will direct players to the category’s home page, where they can find out more specifics about each class by clicking on information cards. Class selection is a crucial step in creating your adventurer!
+
+This site mainly utilizes a combination of HTML and JavaScript with the Dungeons and Dragons API. The class cards are where most of the API information was implemented. Bootstrap and CSS were used to structure and style the pages, along with various artwork from the D&D website and other artists. This project also contains media queries for mobile responsiveness.

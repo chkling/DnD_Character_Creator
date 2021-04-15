@@ -262,13 +262,6 @@
 	background-color: var(--fireblue);
 }
 
-/* .class-filter:hover {
-	background-color: var(--fire);
-	color: var(--text);
-	text-shadow: none;
-	border: 2px solid var(--main);
-} */
-
 .main-class-img {
 	height: 500px;
 	width: 900px;
@@ -500,6 +493,5 @@
 @media (min-width: 1501px) {
 	#main-container {
 		height: 200vh;
-		/* height: 240vh; */
 	}
 }
