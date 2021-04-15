@@ -4,7 +4,6 @@ This site mainly utilizes a combination of HTML and JavaScript with the Dungeons
 
 <img width="1422" alt="Screen Shot 2021-04-15 at 11 00 53 AM" src="https://user-images.githubusercontent.com/71455657/114896361-445a4800-9dde-11eb-9009-f743fa465391.png">
 
-
 <img width="1423" alt="Screen Shot 2021-04-15 at 11 05 45 AM" src="https://user-images.githubusercontent.com/71455657/114896404-4f14dd00-9dde-11eb-9633-0576b588c207.png">
 
 ![Screen Shot 2021-04-15 at 11 08 45 AM](https://user-images.githubusercontent.com/71455657/114896424-5340fa80-9dde-11eb-8926-80a7f21f89cd.png)
