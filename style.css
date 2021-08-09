@@ -239,6 +239,7 @@
 .class-filter:hover {
 	color: var(--text);
 	border: 2px solid var(--main);
+	cursor: pointer;
 }
 
 #barbarian:hover,
@@ -540,4 +541,16 @@
 	#main-container {
 		height: 200vh;
 	}
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media (min-width: 992px) and (max-width: 1360px) {
+}
+
+@media screen and (min-width: 1360px) {
 }
