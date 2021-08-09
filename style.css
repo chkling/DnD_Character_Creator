@@ -79,7 +79,7 @@
 }
 
 #main-container {
-	background-image: url(images/nightsky.jpeg);
+	background-color: var(--main);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: auto !important;
