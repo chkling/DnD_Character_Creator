@@ -275,6 +275,11 @@
 	margin: 10px;
 }
 
+#selection-div {
+	border-bottom: 1px solid lightblue;
+	padding-bottom: 20px;
+}
+
 /* CARD */
 
 #class-box {
@@ -662,5 +667,10 @@
 	.footer a {
 		color: white;
 		text-decoration: none;
+	}
+
+	#selection-div {
+		border: none;
+		padding: 0;
 	}
 }
