@@ -82,8 +82,9 @@
 	background-image: url(images/nightsky.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-size: auto !important;
 	height: 100%;
-	width: 100% !important;
+	width: 100%;
 	color: var(--text);
 }
 
