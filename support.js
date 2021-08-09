@@ -33,7 +33,7 @@ const fetchSupportData = async () => {
 	// create bard text
 	bardName.innerHTML = json.results[1]["name"];
 	bardInfo.innerHTML =
-		"An inspiring magician whose power echoes the music of creation...";
+		"An inspiring magician whose power in words and versatility echoes the music of creation...";
 	bardButton.innerHTML = "Learn More";
 
 	// append
@@ -152,7 +152,7 @@ const fetchSupportData = async () => {
 
 	druidName.innerHTML = json.results[3]["name"];
 	druidInfo.innerHTML =
-		"A priest of the Old Faith, wielding the powers of nature -- moonlight and plant growth, fire and lightning -- and adopting animal forms...";
+		"A priest of the Old Faith, wielding the powers of nature and adopting animal forms...";
 	druidButton.innerHTML = "Learn More";
 
 	//append

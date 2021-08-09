@@ -173,7 +173,7 @@
 
 .main-class {
 	background-color: var(--body);
-	height: 115vh;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -200,7 +200,8 @@
 	background-image: url(images/nightsky.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 130vh;
+	height: 100%;
+	width: 100%;
 }
 
 .main-class-header {
@@ -216,22 +217,22 @@
 	background-image: url(images/nightsky.jpeg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 130vh;
+	height: 100%;
+	width: 100%;
 }
 
 .class-filter {
-	background-color: var(--main-light);
 	color: var(--text);
-	margin: 20px;
 	padding: 10px;
+	margin-bottom: 25px;
 	text-align: center;
 	font-size: 20px;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
 		1px 1px 0 #000;
 	border-radius: 10px;
 	border: 2px solid var(--main-light);
-	width: 400px;
-	height: 300px;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -267,9 +268,9 @@
 }
 
 .main-class-img {
-	width: 450px;
-	height: 300px;
-	padding: 20px;
+	width: 100%;
+	height: 100%;
+	margin: 10px;
 }
 
 /* CARD */
@@ -277,19 +278,15 @@
 #class-box {
 	display: flex;
 	flex-direction: column;
-	height: 120vh;
+	height: 100%;
 	grid-gap: 0;
 	overflow: none;
-
 	margin: auto;
 	padding: 30px;
 	border-radius: 18px;
-	background-color: var(--secondary-light);
 	color: var(--text);
 	box-sizing: 5px 5px 15px rgba(0, 0, 0, 0.9);
-
-	width: 110vh;
-
+	width: 100%;
 	align-content: center;
 	justify-content: center;
 	grid-auto-flow: column;
@@ -302,41 +299,12 @@
 }
 
 #class-box ul {
-	grid-area: title;
 	font-size: 25px;
 	list-style-type: circle;
 }
 
 #class-box ul li {
-	grid-area: text;
 	font-size: 16px;
-}
-
-.button {
-	grid-area: button;
-}
-
-.class-header {
-	grid-area: header;
-	font-size: 30px;
-}
-.class-health {
-	grid-area: chp;
-	font-size: 20px;
-}
-
-.class-info {
-	grid-area: info;
-}
-.starter-pack {
-	grid-area: pack;
-}
-.proficiencies {
-	grid-area: prof;
-}
-
-.proficiencies-choice {
-	grid-area: profchoice;
 }
 
 .footer {
@@ -344,7 +312,7 @@
 	flex-direction: column;
 	text-align: center;
 	z-index: 1;
-	margin: 20px;
+	margin: 20px 20px 0 20px;
 }
 
 .footer a {
@@ -352,13 +320,21 @@
 	text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
+	#main-body {
+		background-image: url(images/nightsky.jpeg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height: 100%;
+		width: 100%;
+	}
 	#navbar-main {
 		display: flex;
 		flex-direction: row;
 		background-color: var(--main);
 		align-items: center;
 		top: 0;
+		height: 100%;
 		width: 100%;
 		border-bottom: 2px lightblue solid;
 	}
@@ -394,6 +370,7 @@
 		background-color: var(--main);
 		color: var(--secondary);
 		text-decoration: none;
+		display: flex;
 	}
 
 	.nav-button {
@@ -402,6 +379,7 @@
 		padding: 10px;
 		text-decoration: none;
 		height: 100%;
+		width: 100%;
 		color: black;
 	}
 
@@ -415,7 +393,8 @@
 		background-image: url(images/nightsky.jpeg);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-		height: 200vh;
+		height: 100%;
+		width: 100%;
 		color: var(--text);
 	}
 
@@ -530,13 +509,6 @@
 		color: var(--secondary);
 	}
 
-	#main-body {
-		background-image: url(images/nightsky.jpeg);
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		height: 130vh;
-	}
-
 	.main-class-header {
 		display: flex;
 		flex-direction: column;
@@ -550,11 +522,16 @@
 		justify-content: center;
 		margin-top: 20px 10px 10px 10px;
 		padding: 10px;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
 	}
 
 	.class-filter {
 		background-color: var(--main-light);
 		color: var(--text);
+		height: 100%;
 		margin: 20px;
 		padding: 10px;
 		text-align: center;
@@ -564,7 +541,6 @@
 		border-radius: 10px;
 		border: 2px solid var(--main-light);
 		width: 400px;
-		height: 300px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -618,15 +594,12 @@
 			"img img . info info"
 			"pack . prof  . profchoice"
 			" . . button . .";
-		margin: auto;
-		padding: 30px;
 		border-radius: 18px;
 		background-color: var(--secondary-light);
 		color: var(--text);
 		box-sizing: 5px 5px 15px rgba(0, 0, 0, 0.9);
-		height: 90vh;
-		width: 110vh;
-
+		height: 100%;
+		width: 100%;
 		align-content: center;
 		justify-content: center;
 		grid-auto-flow: column;
@@ -688,133 +661,4 @@
 		color: white;
 		text-decoration: none;
 	}
-}
-
-/* @media (min-width: 401px) and (max-width: 550px) {
-	#main-container {
-		height: 570vh;
-	}
-	#navbar-main {
-		display: flex;
-		flex-direction: column;
-		background-color: var(--main);
-		align-items: center;
-		justify-content: center;
-		top: 0;
-		width: 100%;
-		border-bottom: 2px lightblue solid;
-	}
-
-	#home {
-		text-align: center;
-	}
-
-	#navbar-menu {
-		display: inline-flex;
-		flex-direction: column-reverse;
-		float: right;
-		padding: 5px;
-		height: 100%;
-		background-color: var(--main);
-	}
-	.nav-button {
-		display: inline-block;
-		margin: 10px;
-		padding: 10px;
-		text-decoration: none;
-		text-align: center;
-		height: 100%;
-		width: 250px;
-		color: black;
-	}
-	.main-img {
-		width: 400px;
-		height: 250px;
-		padding: 20px;
-	}
-	.footer {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-	}
-	.main-class-body {
-		display: flex;
-		flex-direction: column;
-		height: 200vh;
-		background-image: url(images/nightsky.jpeg);
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-	}
-
-	.main-class-img {
-		width: 450px;
-		height: 300px;
-		padding: 20px;
-	}
-	#class-box {
-		display: flex;
-		flex-direction: column;
-		height: 120vh;
-		grid-gap: 0;
-		overflow: none;
-	}
-} */
-
-/* @media (min-width: 551px) and (max-width: 750px) {
-	#main-container {
-		height: 300vh;
-		width: 140vw;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-	}
-	#navbar-main {
-		display: flex;
-		flex-direction: row;
-		background-color: var(--main);
-		align-items: center;
-		justify-content: center;
-		top: 0;
-		width: 140vw;
-		border-bottom: 2px lightblue solid;
-	}
-	#class-box {
-		display: flex;
-		flex-direction: column;
-	}
-} */
-
-/* @media (min-width: 751px) and (max-width: 1000px) {
-	#main-container {
-		width: 150vw;
-		height: 220vh;
-	}
-	#navbar-main {
-		width: 150vw;
-	}
-}
-@media (min-width: 1001px) and (max-width: 1199px) {
-	#main-container {
-		height: 170vh;
-	}
-}
-
-@media (min-width: 1200px) and (max-width: 1500px) {
-	#main-container {
-		height: 260vh;
-	}
-}
-
-@media (min-width: 1501px) {
-	#main-container {
-		height: 200vh;
-	}
-} */
-
-@media screen and (min-width: 992px) {
-}
-
-@media (min-width: 992px) and (max-width: 1360px) {
-}
-
-@media screen and (min-width: 1360px) {
 }
