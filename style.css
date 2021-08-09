@@ -80,8 +80,9 @@
 
 #main-container {
 	background-image: url(images/nightsky.jpeg);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-repeat: repeat;
+	/* background-attachment: fixed; */
+	background-size: auto;
 	height: 100%;
 	color: var(--text);
 }
