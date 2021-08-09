@@ -82,7 +82,7 @@
 	background-color: var(--main);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: auto !important;
+	background-size: auto;
 	height: 100%;
 	width: 100%;
 	color: var(--text);
@@ -199,7 +199,7 @@
 }
 
 #main-body {
-	background-image: url(images/nightsky.jpeg);
+	background-color: var(--main);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	height: 100%;
@@ -216,7 +216,7 @@
 .main-class-body {
 	display: flex;
 	flex-direction: column;
-	background-image: url(images/nightsky.jpeg);
+	background-color: var(--main);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	height: 100%;
